@@ -4,6 +4,11 @@ import { Input } from "./ui/input";
 import { Calendar, Home, MapPin, Package } from "lucide-react";
 
 const GetQuoteSection = () => {
+  const handleGetQuote = () => {
+    // Dispatch an event that Index.tsx will listen to
+    window.dispatchEvent(new CustomEvent('openContactForm'));
+  };
+
   return (
     <section className="py-20 bg-primary text-white relative overflow-hidden">
       {/* Bubble Animation */}
@@ -89,7 +94,10 @@ const GetQuoteSection = () => {
               </label>
             </div>
           </div>
-          <Button className="w-full mt-6 bg-primary hover:bg-primary-hover">
+          <Button 
+            className="w-full mt-6 bg-primary hover:bg-primary-hover"
+            onClick={handleGetQuote}
+          >
             Get Free Quote
           </Button>
         </motion.div>

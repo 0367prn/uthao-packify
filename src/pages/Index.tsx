@@ -3,11 +3,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FeedbackSection from "@/components/FeedbackSection";
 import GetQuoteSection from "@/components/GetQuoteSection";
-import { services, steps } from "@/lib/data";
+import ProcessSection from "@/components/ProcessSection";
+import ContactForm from "@/components/ContactForm";
+import { services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -137,46 +142,18 @@ const Index = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-accent/20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">How It Works</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our simple 4-step process makes moving easy
-            </p>
-          </motion.div>
-
-          <div className="grid gap-8 max-w-3xl mx-auto">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="process-step"
-              >
-                <div className="flex-shrink-0">
-                  <step.icon className="h-8 w-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    {index + 1}. {step.title}
-                  </h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection />
 
       <FeedbackSection />
       <GetQuoteSection />
       <Footer />
+
+      {/* Contact Form Modal */}
+      {showContactForm && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <ContactForm onClose={() => setShowContactForm(false)} />
+        </div>
+      )}
     </div>
   );
 };
