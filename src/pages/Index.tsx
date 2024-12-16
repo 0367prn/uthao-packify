@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import FeedbackSection from "@/components/FeedbackSection";
 import GetQuoteSection from "@/components/GetQuoteSection";
 import { services, steps } from "@/lib/data";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "lucide-react";
 
 const Index = () => {
   return (
@@ -11,23 +13,93 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 bg-gradient-to-b from-white to-accent/20">
+      <section className="relative min-h-screen pt-24 pb-32 bg-gradient-to-b from-white to-accent/20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto mb-12"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-primary">Moving & Storage</span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              Moving & Storage
               <br />
-              Made Simple
+              <span className="text-primary">Made Simple</span>
             </h1>
             <p className="text-xl text-gray-600 mb-12">
-              Professional moving services that make your relocation stress-free.
-              Get started with a free quote today.
+              Moving Express is the quick, convenient option that makes long-distance moving easy.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="relative max-w-5xl mx-auto"
+          >
+            <img 
+              src="/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png" 
+              alt="Moving Service" 
+              className="w-full h-auto rounded-lg shadow-xl mb-12"
+            />
+
+            {/* Quote Form */}
+            <div className="glass p-6 rounded-xl max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Moving From"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary"
+                  />
+                </div>
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Moving To"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary"
+                  />
+                </div>
+                <div className="relative">
+                  <input
+                    type="date"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary"
+                  />
+                  <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                </div>
+                <Button 
+                  variant="secondary"
+                  className="w-full py-3 text-lg font-semibold hover:shadow-lg transition-all duration-300"
+                >
+                  Get A Quote
+                </Button>
+              </div>
+            </div>
+
+            {/* Floating Bubbles Animation */}
+            <div className="absolute -z-10 top-0 left-0 w-full h-full overflow-hidden">
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute rounded-full bg-primary/10"
+                  style={{
+                    width: Math.random() * 100 + 50,
+                    height: Math.random() * 100 + 50,
+                    left: Math.random() * 100 + '%',
+                    top: Math.random() * 100 + '%',
+                  }}
+                  animate={{
+                    y: [0, -20, 0],
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                  }}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
