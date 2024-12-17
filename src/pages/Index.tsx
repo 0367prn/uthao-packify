@@ -5,6 +5,7 @@ import FeedbackSection from "@/components/FeedbackSection";
 import GetQuoteSection from "@/components/GetQuoteSection";
 import ProcessSection from "@/components/ProcessSection";
 import ContactForm from "@/components/ContactForm";
+import SloganSection from "@/components/SloganSection";
 import { services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Calendar, Home, MapPin, Package, Phone, User } from "lucide-react";
@@ -157,6 +158,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Slogan Section */}
+      <SloganSection />
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-background">
