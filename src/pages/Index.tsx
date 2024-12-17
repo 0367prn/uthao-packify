@@ -6,6 +6,7 @@ import GetQuoteSection from "@/components/GetQuoteSection";
 import ProcessSection from "@/components/ProcessSection";
 import ContactForm from "@/components/ContactForm";
 import SloganSection from "@/components/SloganSection";
+import StatsBoxes from "@/components/StatsBoxes";
 import { services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Calendar, Home, MapPin, Package, Phone, User } from "lucide-react";
@@ -156,6 +157,9 @@ const Index = () => {
               </Button>
             </div>
           </motion.div>
+
+          {/* Stats Boxes */}
+          <StatsBoxes />
         </div>
       </section>
 
