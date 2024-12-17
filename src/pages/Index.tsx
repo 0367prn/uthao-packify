@@ -7,18 +7,33 @@ import ProcessSection from "@/components/ProcessSection";
 import ContactForm from "@/components/ContactForm";
 import { services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Calendar, Home, MapPin, Package, Phone, User } from "lucide-react";
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 const Index = () => {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    from: "",
+    to: "",
+    date: "",
+    size: "Studio"
+  });
+
+  const handleWhatsApp = () => {
+    const message = `Hi, I'm ${formData.name}. I need moving services from ${formData.from} to ${formData.to} on ${formData.date}. Home size: ${formData.size}`;
+    const whatsappUrl = `https://wa.me/+1234567890?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-24 pb-32 bg-gradient-to-b from-white to-accent/20">
+      <section id="home" className="relative min-h-screen pt-24 pb-32 bg-gradient-to-b from-background to-accent/20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,12 +41,12 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
               Moving & Storage
               <br />
               <span className="text-primary">Made Simple</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-12">
+            <p className="text-xl text-muted-foreground mb-12">
               Moving Express is the quick, convenient option that makes long-distance moving easy.
             </p>
           </motion.div>
@@ -50,75 +65,109 @@ const Index = () => {
 
             {/* Quote Form */}
             <div className="glass p-6 rounded-xl max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="relative">
-                  <input
+                  <label className="flex items-center gap-2 mb-2 text-foreground">
+                    <User className="h-5 w-5" />
+                    Your Name
+                  </label>
+                  <Input
                     type="text"
-                    placeholder="Moving From"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full"
                   />
                 </div>
                 <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Moving To"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary"
+                  <label className="flex items-center gap-2 mb-2 text-foreground">
+                    <Phone className="h-5 w-5" />
+                    Phone Number
+                  </label>
+                  <Input
+                    type="tel"
+                    placeholder="Enter phone number"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full"
                   />
                 </div>
                 <div className="relative">
-                  <input
+                  <label className="flex items-center gap-2 mb-2 text-foreground">
+                    <Home className="h-5 w-5" />
+                    Moving From
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="Enter origin address"
+                    value={formData.from}
+                    onChange={(e) => setFormData({ ...formData, from: e.target.value })}
+                    className="w-full"
+                  />
+                </div>
+                <div className="relative">
+                  <label className="flex items-center gap-2 mb-2 text-foreground">
+                    <MapPin className="h-5 w-5" />
+                    Moving To
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="Enter destination address"
+                    value={formData.to}
+                    onChange={(e) => setFormData({ ...formData, to: e.target.value })}
+                    className="w-full"
+                  />
+                </div>
+                <div className="relative">
+                  <label className="flex items-center gap-2 mb-2 text-foreground">
+                    <Calendar className="h-5 w-5" />
+                    Moving Date
+                  </label>
+                  <Input
                     type="date"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-primary"
+                    value={formData.date}
+                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                    className="w-full"
                   />
-                  <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
                 </div>
-                <Button 
-                  variant="secondary"
-                  className="w-full py-3 text-lg font-semibold hover:shadow-lg transition-all duration-300"
-                >
-                  Get A Quote
-                </Button>
+                <div className="relative">
+                  <label className="flex items-center gap-2 mb-2 text-foreground">
+                    <Package className="h-5 w-5" />
+                    Home Size
+                  </label>
+                  <select 
+                    className="w-full h-10 px-3 border rounded-md bg-background text-foreground"
+                    value={formData.size}
+                    onChange={(e) => setFormData({ ...formData, size: e.target.value })}
+                  >
+                    <option>Studio</option>
+                    <option>1 Bedroom</option>
+                    <option>2 Bedrooms</option>
+                    <option>3+ Bedrooms</option>
+                  </select>
+                </div>
               </div>
-            </div>
-
-            {/* Floating Bubbles Animation */}
-            <div className="absolute -z-10 top-0 left-0 w-full h-full overflow-hidden">
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute rounded-full bg-primary/10"
-                  style={{
-                    width: Math.random() * 100 + 50,
-                    height: Math.random() * 100 + 50,
-                    left: Math.random() * 100 + '%',
-                    top: Math.random() * 100 + '%',
-                  }}
-                  animate={{
-                    y: [0, -20, 0],
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: i * 0.5,
-                  }}
-                />
-              ))}
+              <Button 
+                className="w-full mt-6 bg-primary hover:bg-primary-hover"
+                onClick={handleWhatsApp}
+              >
+                Get Free Quote via WhatsApp
+              </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section id="services" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Our Services</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Comprehensive moving solutions tailored to your needs
             </p>
           </motion.div>
@@ -133,8 +182,8 @@ const Index = () => {
                 className="service-card"
               >
                 <service.icon className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -142,11 +191,34 @@ const Index = () => {
       </section>
 
       {/* Process Section */}
-      <ProcessSection />
+      <section id="process">
+        <ProcessSection />
+      </section>
 
-      <FeedbackSection />
-      <GetQuoteSection />
-      <Footer />
+      {/* About Section */}
+      <section id="about" className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-8 text-foreground">About Us</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            We are dedicated to providing exceptional moving and packing services with a focus on reliability, efficiency, and customer satisfaction.
+          </p>
+        </div>
+      </section>
+
+      {/* Feedback Section */}
+      <section id="feedback">
+        <FeedbackSection />
+      </section>
+
+      {/* Quote Section */}
+      <section id="quote">
+        <GetQuoteSection />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact">
+        <Footer />
+      </section>
 
       {/* Contact Form Modal */}
       {showContactForm && (
