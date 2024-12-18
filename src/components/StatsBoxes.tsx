@@ -1,4 +1,4 @@
-import { motion, useMotion, useTransform, animate } from "framer-motion";
+import { motion, animate } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Star, Clock, Users } from "lucide-react";
 import { useInView } from "react-intersection-observer";
@@ -39,13 +39,13 @@ const StatsBoxes = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="glass rounded-2xl p-6 text-center transform hover:scale-105 transition-transform duration-300"
+          className="glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 min-w-[280px] min-h-[200px] flex flex-col items-center justify-center"
         >
-          <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-            <Users className="h-6 w-6 text-primary" />
+          <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
+            <Users className="h-8 w-8 text-primary" />
           </div>
-          <h3 className="text-4xl font-bold text-primary mb-2">{count}+</h3>
-          <p className="text-gray-600 dark:text-gray-300">Happy Clients</p>
+          <h3 className="text-5xl font-bold text-primary mb-3">{count}+</h3>
+          <p className="text-lg text-gray-600 dark:text-gray-300">Happy Clients</p>
         </motion.div>
 
         {/* Rating Box */}
@@ -53,17 +53,17 @@ const StatsBoxes = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="glass rounded-2xl p-6 text-center transform hover:scale-105 transition-transform duration-300"
+          className="glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 min-w-[280px] min-h-[200px] flex flex-col items-center justify-center"
         >
-          <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
-            <Star className="h-6 w-6 text-secondary" />
+          <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10">
+            <Star className="h-8 w-8 text-secondary" />
           </div>
-          <h3 className="text-4xl font-bold text-secondary mb-2">{rating}</h3>
-          <div className="flex justify-center gap-1 mb-2">
+          <h3 className="text-5xl font-bold text-secondary mb-3">{rating}</h3>
+          <div className="flex justify-center gap-1.5 mb-3">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className={`h-4 w-4 ${
+                className={`h-5 w-5 ${
                   i < Math.floor(rating)
                     ? "text-secondary fill-current"
                     : "text-gray-300"
@@ -71,7 +71,7 @@ const StatsBoxes = () => {
               />
             ))}
           </div>
-          <p className="text-gray-600 dark:text-gray-300">Average Rating</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300">Average Rating</p>
         </motion.div>
 
         {/* Service Hours Box */}
@@ -79,14 +79,14 @@ const StatsBoxes = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="glass rounded-2xl p-6 text-center transform hover:scale-105 transition-transform duration-300"
+          className="glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 min-w-[280px] min-h-[200px] flex flex-col items-center justify-center"
         >
-          <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20">
-            <Clock className="h-6 w-6 text-accent-foreground" />
+          <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20">
+            <Clock className="h-8 w-8 text-accent-foreground" />
           </div>
-          <h3 className="text-4xl font-bold text-accent-foreground mb-2">24/7</h3>
-          <p className="text-gray-600 dark:text-gray-300">Support Available</p>
-          <p className="text-sm text-gray-500 dark:text-gray-400">365 Days</p>
+          <h3 className="text-5xl font-bold text-accent-foreground mb-3">24/7</h3>
+          <p className="text-lg text-gray-600 dark:text-gray-300">Support Available</p>
+          <p className="text-base text-gray-500 dark:text-gray-400">365 Days</p>
         </motion.div>
       </div>
     </div>
