@@ -158,6 +158,7 @@ const Index = () => {
               </Button>
             </div>
           </motion.div>
+        </div>
         <StatsBoxes />
       </section>
 
