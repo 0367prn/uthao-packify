@@ -32,7 +32,7 @@ const StatsBoxes = () => {
   }, [inView]);
 
   return (
-    <div ref={ref} className="max-w-5xl mx-auto mt-auto px-4 absolute bottom-8 left-1/2 -translate-x-1/2 w-full">
+    <div ref={ref} className="max-w-5xl mx-auto px-4 absolute bottom-32 left-1/2 -translate-x-1/2 w-full">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Happy Clients Box */}
         <motion.div

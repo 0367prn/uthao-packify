@@ -7,6 +7,7 @@ import ProcessSection from "@/components/ProcessSection";
 import ContactForm from "@/components/ContactForm";
 import SloganSection from "@/components/SloganSection";
 import StatsBoxes from "@/components/StatsBoxes";
+import PartnersSection from "@/components/PartnersSection";
 import { services } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Calendar, Home, MapPin, Package, Phone, User } from "lucide-react";
@@ -157,11 +158,11 @@ const Index = () => {
               </Button>
             </div>
           </motion.div>
-
-          {/* Stats Boxes */}
-          <StatsBoxes />
-        </div>
+        <StatsBoxes />
       </section>
+
+      {/* Partners Section */}
+      <PartnersSection />
 
       {/* Slogan Section */}
       <SloganSection />
@@ -199,9 +200,7 @@ const Index = () => {
       </section>
 
       {/* Process Section */}
-      <section id="process">
-        <ProcessSection />
-      </section>
+      <ProcessSection />
 
       {/* About Section */}
       <section id="about" className="py-20 bg-background">
@@ -214,19 +213,13 @@ const Index = () => {
       </section>
 
       {/* Feedback Section */}
-      <section id="feedback">
-        <FeedbackSection />
-      </section>
+      <FeedbackSection />
 
       {/* Quote Section */}
-      <section id="quote">
-        <GetQuoteSection />
-      </section>
+      <GetQuoteSection />
 
       {/* Contact Section */}
-      <section id="contact">
-        <Footer />
-      </section>
+      <Footer />
 
       {/* Contact Form Modal */}
       {showContactForm && (
