@@ -22,6 +22,11 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Stats Section */}
+      <section className="py-20 relative z-10 bg-background">
+        <StatsBoxes />
+      </section>
+
       {/* Partners Section */}
       <PartnersSection />
 
@@ -37,7 +42,7 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 dark:text-white">Our Services</h2>
-            <p className="text-muted-foreground dark:text-white/70 max-w-2xl mx-auto">
+            <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
               Comprehensive moving solutions tailored to your needs
             </p>
           </motion.div>
@@ -53,7 +58,7 @@ const Index = () => {
               >
                 <service.icon className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-xl font-semibold mb-2 dark:text-white">{service.title}</h3>
-                <p className="text-muted-foreground dark:text-white/70">{service.description}</p>
+                <p className="text-muted-foreground dark:text-gray-300">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -61,13 +66,15 @@ const Index = () => {
       </section>
 
       {/* Process Section */}
-      <ProcessSection />
+      <section id="process" className="py-20 bg-background">
+        <ProcessSection />
+      </section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8 dark:text-white">About Us</h2>
-          <p className="text-muted-foreground dark:text-white/70 max-w-3xl mx-auto">
+          <p className="text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto">
             We are dedicated to providing exceptional moving and packing services with a focus on reliability, efficiency, and customer satisfaction.
           </p>
         </div>
@@ -77,7 +84,9 @@ const Index = () => {
       <FeedbackSection />
 
       {/* Quote Section */}
-      <GetQuoteSection />
+      <section id="quote">
+        <GetQuoteSection />
+      </section>
 
       {/* Contact Section */}
       <Footer />

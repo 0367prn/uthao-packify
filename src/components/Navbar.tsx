@@ -10,7 +10,6 @@ const Navbar = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Apply dark mode class to html element
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
@@ -32,6 +31,14 @@ const Navbar = () => {
     }
   };
 
+  const menuItems = [
+    { label: "Home", id: "home" },
+    { label: "Services", id: "services" },
+    { label: "Process", id: "process" },
+    { label: "About", id: "about" },
+    { label: "Contact", id: "contact" }
+  ];
+
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
     { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
@@ -52,14 +59,14 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {["Home", "Services", "Process", "About", "Contact"].map((item) => (
+            {menuItems.map((item) => (
               <motion.button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.05 }}
                 className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
               >
-                {item}
+                {item.label}
               </motion.button>
             ))}
 
@@ -94,7 +101,7 @@ const Navbar = () => {
 
             <Button 
               onClick={() => scrollToSection('quote')}
-              className="bg-primary hover:bg-primary-hover text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
             >
               Get Quote
             </Button>
@@ -125,13 +132,13 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden py-4 space-y-4"
           >
-            {["Home", "Services", "Process", "About", "Contact"].map((item) => (
+            {menuItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
                 className="block w-full text-left py-2 px-4 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg"
               >
-                {item}
+                {item.label}
               </button>
             ))}
             
@@ -152,7 +159,7 @@ const Navbar = () => {
 
             <Button 
               onClick={() => scrollToSection('quote')}
-              className="w-full bg-primary hover:bg-primary-hover text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
             >
               Get Quote
             </Button>

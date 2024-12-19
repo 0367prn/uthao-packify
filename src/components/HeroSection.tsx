@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
+  const scrollToQuote = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="relative min-h-screen pt-24 pb-32 bg-gradient-to-b from-background to-accent/20">
@@ -14,21 +18,18 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto mb-12"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 dark:text-white">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 dark:text-white">
             Moving & Storage
             <br />
-            <span className="text-primary dark:text-primary-foreground">Made Simple</span>
+            <span className="text-primary">Made Simple</span>
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground dark:text-white/70 mb-8">
+          <p className="text-xl text-muted-foreground dark:text-gray-300 mb-12">
             Moving Express is the quick, convenient option that makes long-distance moving easy.
           </p>
           <Button 
             size="lg"
-            className="bg-primary hover:bg-primary-hover text-white text-lg px-8 py-6"
-            onClick={() => {
-              const quoteSection = document.getElementById('quote');
-              quoteSection?.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={scrollToQuote}
+            className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6"
           >
             Get Started Now
           </Button>
@@ -43,7 +44,7 @@ const HeroSection = () => {
           <img 
             src="/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png" 
             alt="Moving Service" 
-            className="w-full h-auto rounded-lg shadow-xl mb-12"
+            className="w-full h-auto rounded-lg shadow-xl"
           />
         </motion.div>
       </div>
