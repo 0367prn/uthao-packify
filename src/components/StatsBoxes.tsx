@@ -44,8 +44,8 @@ const StatsBoxes = () => {
           <div className="mb-2 inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
             <Users className="h-5 w-5 text-primary" />
           </div>
-          <h3 className="text-2xl font-bold text-primary dark:text-primary-foreground mb-1">{count}+</h3>
-          <p className="text-sm text-foreground/70 dark:text-foreground/80">Happy Clients</p>
+          <h3 className="text-2xl font-bold text-primary dark:text-white mb-1">{count}+</h3>
+          <p className="text-sm text-foreground/70 dark:text-white/80">Happy Clients</p>
         </motion.div>
 
         {/* Rating Box */}
@@ -58,7 +58,7 @@ const StatsBoxes = () => {
           <div className="mb-2 inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10">
             <Star className="h-5 w-5 text-secondary" />
           </div>
-          <h3 className="text-2xl font-bold text-secondary dark:text-secondary-foreground mb-1">{rating}</h3>
+          <h3 className="text-2xl font-bold text-secondary dark:text-white mb-1">{rating}</h3>
           <div className="flex justify-center gap-1 mb-1">
             {[...Array(5)].map((_, i) => (
               <Star
@@ -71,7 +71,7 @@ const StatsBoxes = () => {
               />
             ))}
           </div>
-          <p className="text-sm text-foreground/70 dark:text-foreground/80">Average Rating</p>
+          <p className="text-sm text-foreground/70 dark:text-white/80">Average Rating</p>
         </motion.div>
 
         {/* Service Hours Box */}
@@ -82,11 +82,11 @@ const StatsBoxes = () => {
           className="glass rounded-xl p-6 text-center transform hover:scale-105 transition-transform duration-300 w-full md:w-[200px] h-[140px] flex flex-col items-center justify-center"
         >
           <div className="mb-2 inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/20">
-            <Clock className="h-5 w-5 text-accent-foreground" />
+            <Clock className="h-5 w-5 text-accent-foreground dark:text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-accent-foreground dark:text-foreground mb-1">24/7</h3>
-          <p className="text-sm text-foreground/70 dark:text-foreground/80">Support Available</p>
-          <p className="text-xs text-foreground/60 dark:text-foreground/70">365 Days</p>
+          <h3 className="text-2xl font-bold text-accent-foreground dark:text-white mb-1">24/7</h3>
+          <p className="text-sm text-foreground/70 dark:text-white/80">Support Available</p>
+          <p className="text-xs text-foreground/60 dark:text-white/70">365 Days</p>
         </motion.div>
       </div>
     </div>
