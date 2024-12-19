@@ -40,9 +40,14 @@ const PartnersSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="glass p-8 rounded-xl text-center transform hover:scale-105 transition-all duration-300"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                backgroundColor: "rgba(255,255,255,0.95)"
+              }}
+              className="glass p-8 rounded-xl text-center transition-all duration-300"
             >
-              <div className="text-4xl mb-4">{partner.logo}</div>
+              <div className="text-4xl mb-4 transform transition-transform duration-300 hover:scale-110">{partner.logo}</div>
               <h3 className="text-xl font-semibold mb-2">{partner.name}</h3>
               <p className="text-muted-foreground text-sm">{partner.description}</p>
             </motion.div>
