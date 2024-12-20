@@ -45,8 +45,8 @@ const StatsBoxes = () => {
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
               <Users className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-3xl font-bold text-primary dark:text-white mb-2">{count}+</h3>
-            <p className="text-base text-foreground/70 dark:text-white/80">Happy Clients</p>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{count}+</h3>
+            <p className="text-gray-600 dark:text-gray-300">Happy Clients</p>
           </motion.div>
 
           {/* Rating Box */}
@@ -59,7 +59,7 @@ const StatsBoxes = () => {
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
               <Star className="h-6 w-6 text-secondary" />
             </div>
-            <h3 className="text-3xl font-bold text-secondary dark:text-white mb-2">{rating}</h3>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{rating}</h3>
             <div className="flex justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -72,7 +72,7 @@ const StatsBoxes = () => {
                 />
               ))}
             </div>
-            <p className="text-base text-foreground/70 dark:text-white/80">Average Rating</p>
+            <p className="text-gray-600 dark:text-gray-300">Average Rating</p>
           </motion.div>
 
           {/* Service Hours Box */}
@@ -85,9 +85,9 @@ const StatsBoxes = () => {
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20">
               <Clock className="h-6 w-6 text-accent-foreground dark:text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-accent-foreground dark:text-white mb-2">24/7</h3>
-            <p className="text-base text-foreground/70 dark:text-white/80">Support Available</p>
-            <p className="text-sm text-foreground/60 dark:text-white/70 mt-1">365 Days</p>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">24/7</h3>
+            <p className="text-gray-600 dark:text-gray-300">Support Available</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">365 Days</p>
           </motion.div>
         </div>
       </div>

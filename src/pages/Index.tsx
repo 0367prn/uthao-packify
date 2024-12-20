@@ -19,18 +19,14 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       
-      {/* Hero Section */}
       <HeroSection />
 
-      {/* Stats Section */}
       <section className="py-20 relative z-10 bg-background">
         <StatsBoxes />
       </section>
 
-      {/* Partners Section */}
       <PartnersSection />
 
-      {/* Slogan Section */}
       <SloganSection />
 
       {/* Services Section */}
@@ -41,8 +37,8 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4 dark:text-white">Our Services</h2>
-            <p className="text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Our Services</h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Comprehensive moving solutions tailored to your needs
             </p>
           </motion.div>
@@ -57,8 +53,8 @@ const Index = () => {
                 className="service-card"
               >
                 <service.icon className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-2 dark:text-white">{service.title}</h3>
-                <p className="text-muted-foreground dark:text-gray-300">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
               </motion.div>
             ))}
           </div>
