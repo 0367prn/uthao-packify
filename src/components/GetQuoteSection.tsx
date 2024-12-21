@@ -15,8 +15,14 @@ const GetQuoteSection = () => {
   });
 
   const handleWhatsApp = () => {
-    const message = `Hi, I'm ${formData.name}. I need moving services from ${formData.from} to ${formData.to} on ${formData.date}. Home size: ${formData.size}`;
-    const whatsappUrl = `https://wa.me/+1234567890?text=${encodeURIComponent(message)}`;
+    const message = `Hi, I'm ${formData.name}. I need moving services:\n\n` +
+      `📱 Phone: ${formData.phone}\n` +
+      `📍 From: ${formData.from}\n` +
+      `🎯 To: ${formData.to}\n` +
+      `📅 Date: ${formData.date}\n` +
+      `🏠 Home Size: ${formData.size}\n\n` +
+      `Please provide me with a quote for my move. Thank you!`;
+    const whatsappUrl = `https://wa.me/+919335922299?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
