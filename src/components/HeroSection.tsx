@@ -19,7 +19,7 @@ const HeroSection = () => {
     
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay }}
       >
@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 pt-32 pb-20">
         {/* Center Content */}
         <div className="text-center max-w-4xl mx-auto mb-12">
-          <MotionWrapper delay={0.2}>
+          <MotionWrapper>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white">
               Moving & Storage
               <br />
@@ -45,25 +45,23 @@ const HeroSection = () => {
             </h1>
           </MotionWrapper>
           
-          <MotionWrapper delay={0.6}>
+          <MotionWrapper>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               Moving Express is the quick, convenient option that makes long-distance moving easy.
             </p>
           </MotionWrapper>
           
-          <MotionWrapper delay={0.8}>
-            <Button 
-              onClick={scrollToQuote}
-              size="lg"
-              className="bg-primary hover:bg-primary-hover text-white text-lg px-8 py-6 rounded-full"
-            >
-              Get Started Now
-            </Button>
-          </MotionWrapper>
+          <Button 
+            onClick={scrollToQuote}
+            size="lg"
+            className="bg-primary hover:bg-primary-hover text-white text-lg px-8 py-6 rounded-full"
+          >
+            Get Started Now
+          </Button>
         </div>
 
         {/* Image Section */}
-        <MotionWrapper delay={1}>
+        <MotionWrapper>
           <div className="relative max-w-5xl mx-auto">
             <img 
               src="/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png" 
