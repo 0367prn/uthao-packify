@@ -34,7 +34,8 @@ const ContactDialog = ({ phoneNumbers, onPhoneCall }: ContactDialogProps) => {
           whileHover={{ scale: 1.05 }}
           className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
         >
-          Contact
+          <span className="md:inline hidden">Contact</span>
+          <PhoneCall className="h-5 w-5 md:hidden inline" />
         </motion.button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">

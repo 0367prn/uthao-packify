@@ -46,7 +46,7 @@ const Navbar = () => {
 
   const phoneNumbers = [
     { number: "8090002299", label: "Main Office" },
-    { number: "8924839930", label: "Customer Support" }
+    { number: "8924839930", label: "Customer Support & Enquiries" }
   ];
 
   const socialLinks = [
