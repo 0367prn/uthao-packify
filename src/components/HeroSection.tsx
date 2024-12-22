@@ -15,7 +15,6 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/30 dark:bg-blue-900/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-gray-100/30 dark:bg-purple-900/20 rounded-full translate-x-1/2 blur-3xl"></div>
 
-      {/* Keep the rest of the component unchanged */}
       <div className="container mx-auto px-4 pt-32 pb-20">
         {/* Center Content */}
         <motion.div 
@@ -74,8 +73,8 @@ const HeroSection = () => {
           className="relative max-w-5xl mx-auto"
         >
           <img 
-            src="/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png" 
-            alt="Moving Service Illustration" 
+            src="/lovable-uploads/58dfb9a3-a70c-410d-a1d7-afec9a3b1adb.png" 
+            alt="Professional Movers with Couch" 
             className="w-full h-auto rounded-lg shadow-xl"
           />
         </motion.div>
