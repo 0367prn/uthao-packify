@@ -65,12 +65,12 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image Section */}
+        {/* Image Section - Updated with reduced width and added spacing */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="relative max-w-5xl mx-auto"
+          className="relative max-w-4xl mx-auto px-8 sm:px-12 md:px-16"
         >
           <img 
             src="/lovable-uploads/58dfb9a3-a70c-410d-a1d7-afec9a3b1adb.png" 
