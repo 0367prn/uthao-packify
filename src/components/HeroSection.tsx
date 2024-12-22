@@ -70,12 +70,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="relative max-w-4xl mx-auto px-8 sm:px-12 md:px-16"
+          className="relative max-w-4xl mx-auto px-4 sm:px-12 md:px-16"
         >
           <img 
             src="/lovable-uploads/58dfb9a3-a70c-410d-a1d7-afec9a3b1adb.png" 
             alt="Professional Movers with Couch" 
-            className="w-full h-auto rounded-lg shadow-xl"
+            className="w-full h-auto object-contain rounded-lg shadow-xl"
           />
         </motion.div>
       </div>
