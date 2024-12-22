@@ -10,10 +10,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#F1F5F9] to-[#FAFAFA] dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-      {/* Background Circles */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/50 dark:bg-blue-900/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-50/50 dark:bg-purple-900/20 rounded-full translate-x-1/2 blur-3xl"></div>
+    <section className="relative min-h-screen bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      {/* Background Circles - reduced opacity and changed colors */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/30 dark:bg-blue-900/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-gray-100/30 dark:bg-purple-900/20 rounded-full translate-x-1/2 blur-3xl"></div>
 
       {/* Keep the rest of the component unchanged */}
       <div className="container mx-auto px-4 pt-32 pb-20">
@@ -81,8 +81,8 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/50 to-transparent dark:from-gray-900/50"></div>
+      {/* Decorative Elements - reduced opacity */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/30 to-transparent dark:from-gray-900/50"></div>
     </section>
   );
 };
