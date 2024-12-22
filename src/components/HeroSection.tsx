@@ -15,6 +15,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/50 dark:bg-blue-900/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-50/50 dark:bg-purple-900/20 rounded-full translate-x-1/2 blur-3xl"></div>
 
+      {/* Keep the rest of the component unchanged */}
       <div className="container mx-auto px-4 pt-32 pb-20">
         {/* Center Content */}
         <motion.div 
@@ -65,61 +66,19 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image Section with Multiple Images */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Main Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="relative z-10"
-          >
-            <img 
-              src="/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png" 
-              alt="Moving Service Main" 
-              className="w-full h-auto rounded-lg shadow-xl"
-            />
-          </motion.div>
-
-          {/* Secondary Moving Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ 
-              opacity: 1, 
-              x: 0,
-              transition: {
-                duration: 0.8,
-                delay: 1.2
-              }
-            }}
-            className="absolute left-[-50px] bottom-[-30px] w-64 z-20"
-          >
-            <img 
-              src="/lovable-uploads/b1f42637-0262-4b00-b47b-6cf572cb96a3.png" 
-              alt="Moving Service Workers" 
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-          </motion.div>
-
-          {/* Floating Animation for Secondary Image */}
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute right-[-30px] top-[20%] w-48 z-20"
-          >
-            <img 
-              src="/lovable-uploads/28d6b83b-ca33-489a-bfaf-b1df54e75324.png" 
-              alt="Moving Box" 
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-          </motion.div>
-        </div>
+        {/* Image Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="relative max-w-5xl mx-auto"
+        >
+          <img 
+            src="/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png" 
+            alt="Moving Service Illustration" 
+            className="w-full h-auto rounded-lg shadow-xl"
+          />
+        </motion.div>
       </div>
 
       {/* Decorative Elements */}
