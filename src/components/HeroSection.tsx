@@ -16,7 +16,7 @@ const HeroSection = () => {
         <img 
           src="/lovable-uploads/268e1309-dfdd-42bd-a330-c757a6dc1009.png"
           alt="Background Illustration"
-          className="absolute right-0 top-1/4 w-1/3 opacity-10"
+          className="absolute right-0 top-0 w-1/2 opacity-20 transform translate-x-1/6"
         />
       </div>
 

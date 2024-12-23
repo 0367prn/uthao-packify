@@ -45,7 +45,7 @@ const ProcessSection = () => {
         <img 
           src="/lovable-uploads/001011d8-65a8-478d-820e-803d085aa3e2.png"
           alt="Background Illustration"
-          className="absolute left-0 bottom-0 w-1/2 opacity-5 transform -translate-x-1/4"
+          className="absolute left-0 bottom-0 w-2/3 opacity-15 transform -translate-x-1/6"
         />
       </div>
 
