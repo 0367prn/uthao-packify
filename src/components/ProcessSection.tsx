@@ -39,8 +39,17 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-accent/10">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-accent/10 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img 
+          src="/lovable-uploads/001011d8-65a8-478d-820e-803d085aa3e2.png"
+          alt="Background Illustration"
+          className="absolute left-0 bottom-0 w-1/2 opacity-5 transform -translate-x-1/4"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

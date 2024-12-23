@@ -11,9 +11,18 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-      {/* Background Circles - reduced opacity and changed colors */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/30 dark:bg-blue-900/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-gray-100/30 dark:bg-purple-900/20 rounded-full translate-x-1/2 blur-3xl"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img 
+          src="/lovable-uploads/268e1309-dfdd-42bd-a330-c757a6dc1009.png"
+          alt="Background Illustration"
+          className="absolute right-0 top-1/4 w-1/3 opacity-10"
+        />
+      </div>
+
+      {/* Background Circles */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/20 dark:bg-blue-900/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-gray-100/20 dark:bg-purple-900/10 rounded-full translate-x-1/2 blur-3xl"></div>
 
       <div className="container mx-auto px-4 pt-32 pb-20">
         {/* Center Content */}
@@ -65,7 +74,7 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image Section - Updated with reduced width and added spacing */}
+        {/* Image Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +89,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Elements - reduced opacity */}
+      {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/30 to-transparent dark:from-gray-900/50"></div>
     </section>
   );

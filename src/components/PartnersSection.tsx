@@ -20,8 +20,17 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section className="py-20 bg-accent/5">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-accent/5 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img 
+          src="/lovable-uploads/3a0b7f56-94c0-45a1-83de-5c6a5a606fdb.png"
+          alt="Background Illustration"
+          className="absolute right-0 top-0 w-1/3 opacity-5 transform translate-x-1/4"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
