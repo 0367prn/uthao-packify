@@ -26,7 +26,7 @@ const PartnersSection = () => {
         <img 
           src="/lovable-uploads/3a0b7f56-94c0-45a1-83de-5c6a5a606fdb.png"
           alt="Background Illustration"
-          className="absolute right-0 top-0 w-2/5 opacity-15 transform translate-x-1/6"
+          className="absolute right-0 top-0 w-2/5 opacity-15 dark:opacity-10 dark:invert dark:brightness-50 transform translate-x-1/6"
         />
       </div>
 
