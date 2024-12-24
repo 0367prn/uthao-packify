@@ -1,11 +1,31 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  
   const scrollToQuote = () => {
     const quoteSection = document.getElementById('quote');
     if (quoteSection) {
       quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleMapClick = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        window.open(`https://www.google.com/maps?q=${latitude},${longitude}`, '_blank');
+      }, (error) => {
+        console.error("Error getting location:", error);
+        // Default to a general map view if location access is denied
+        window.open('https://www.google.com/maps', '_blank');
+      });
+    } else {
+      // Fallback for browsers that don't support geolocation
+      window.open('https://www.google.com/maps', '_blank');
     }
   };
 
@@ -88,6 +108,33 @@ const HeroSection = () => {
           />
         </motion.div>
       </div>
+
+      {/* Map Icon */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            y: {
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
+          className="cursor-pointer"
+          onClick={handleMapClick}
+        >
+          <div className="glass p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow">
+            <MapPin size={32} className="text-primary" />
+          </div>
+        </motion.div>
+      </motion.div>
 
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/30 to-transparent dark:from-gray-900/50"></div>
