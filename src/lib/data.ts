@@ -1,4 +1,4 @@
-import { Truck, Package, MapPin, Calendar, Clock, Shield, Star } from "lucide-react";
+import { Truck, Package, MapPin, Shield } from "lucide-react";
 
 export const services = [
   {
