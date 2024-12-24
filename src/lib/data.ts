@@ -1,4 +1,4 @@
-import { Truck, Package, MapPin, Shield } from "lucide-react";
+import { Truck, Package, MapPin, Shield, Calendar as CalendarIcon, Clock as ClockIcon } from "lucide-react";
 
 export const services = [
   {
@@ -27,7 +27,7 @@ export const steps = [
   {
     title: "Plan",
     description: "Schedule your move and get a free quote",
-    icon: Calendar,
+    icon: CalendarIcon,
   },
   {
     title: "Pack",
@@ -42,6 +42,6 @@ export const steps = [
   {
     title: "Deliver",
     description: "Safe and timely delivery to your new location",
-    icon: Clock,
+    icon: ClockIcon,
   },
 ];
