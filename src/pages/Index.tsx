@@ -82,12 +82,12 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative h-[200px] overflow-hidden"
+                className="relative h-[300px] overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
                 onHoverStart={() => setHoveredService(service.title)}
                 onHoverEnd={() => setHoveredService(null)}
               >
                 <motion.div
-                  className="service-card h-full"
+                  className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
                   initial={{ x: 0 }}
                   animate={{ 
                     x: hoveredService === service.title ? '-100%' : 0,
@@ -104,10 +104,10 @@ const Index = () => {
                 </motion.div>
 
                 <motion.div
-                  className="service-card absolute top-0 left-full h-full w-full"
+                  className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
                   initial={{ x: '100%' }}
                   animate={{ 
-                    x: hoveredService === service.title ? '-100%' : 0,
+                    x: hoveredService === service.title ? '0' : '100%',
                   }}
                   transition={{ duration: 0.3 }}
                 >
