@@ -14,18 +14,11 @@ const HeroSection = () => {
   };
 
   const handleMapClick = () => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
-        window.open(mapUrl, '_blank', 'noopener,noreferrer');
-      }, (error) => {
-        console.error("Error getting location:", error);
-        window.open('https://www.google.com/maps', '_blank', 'noopener,noreferrer');
-      });
-    } else {
-      window.open('https://www.google.com/maps', '_blank', 'noopener,noreferrer');
-    }
+    // Convert DMS coordinates to decimal degrees
+    const latitude = 26.927944;  // 26°55'40.6"N
+    const longitude = 80.969944; // 80°58'11.8"E
+    const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+    window.open(mapUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
