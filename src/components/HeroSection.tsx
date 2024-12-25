@@ -29,7 +29,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none dark:hidden">
         <img 
           src="/lovable-uploads/268e1309-dfdd-42bd-a330-c757a6dc1009.png"
@@ -105,7 +105,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 mt-16"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
