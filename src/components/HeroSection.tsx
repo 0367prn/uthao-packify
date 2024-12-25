@@ -17,15 +17,17 @@ const HeroSection = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
-        window.open(`https://www.google.com/maps?q=${latitude},${longitude}`, '_blank');
+        // Fixed URL format by removing the colon
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+        window.open(mapUrl, '_blank', 'noopener,noreferrer');
       }, (error) => {
         console.error("Error getting location:", error);
         // Default to a general map view if location access is denied
-        window.open('https://www.google.com/maps', '_blank');
+        window.open('https://www.google.com/maps', '_blank', 'noopener,noreferrer');
       });
     } else {
       // Fallback for browsers that don't support geolocation
-      window.open('https://www.google.com/maps', '_blank');
+      window.open('https://www.google.com/maps', '_blank', 'noopener,noreferrer');
     }
   };
 
