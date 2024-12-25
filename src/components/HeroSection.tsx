@@ -105,7 +105,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div 
-        className="absolute left-1/2 transform -translate-x-1/2 z-10 bottom-16 md:bottom-16 mt-8"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
@@ -124,8 +124,8 @@ const HeroSection = () => {
           className="cursor-pointer"
           onClick={handleMapClick}
         >
-          <div className="glass p-2 md:p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow">
-            <MapPin size={24} className="text-red-500 md:w-8 md:h-8" />
+          <div className="glass p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow">
+            <MapPin size={24} className="text-red-500 md:w-6 md:h-6" />
           </div>
         </motion.div>
       </motion.div>
