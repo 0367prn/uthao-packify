@@ -17,23 +17,19 @@ const HeroSection = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
-        // Fixed URL format by removing the colon
         const mapUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
         window.open(mapUrl, '_blank', 'noopener,noreferrer');
       }, (error) => {
         console.error("Error getting location:", error);
-        // Default to a general map view if location access is denied
         window.open('https://www.google.com/maps', '_blank', 'noopener,noreferrer');
       });
     } else {
-      // Fallback for browsers that don't support geolocation
       window.open('https://www.google.com/maps', '_blank', 'noopener,noreferrer');
     }
   };
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none dark:hidden">
         <img 
           src="/lovable-uploads/268e1309-dfdd-42bd-a330-c757a6dc1009.png"
@@ -42,12 +38,10 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Background Circles */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-blue-50/20 dark:bg-blue-900/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-gray-100/20 dark:bg-purple-900/10 rounded-full translate-x-1/2 blur-3xl"></div>
 
       <div className="container mx-auto px-4 pt-32 pb-20">
-        {/* Center Content */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,7 +90,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,9 +104,8 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Map Icon */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute left-1/2 transform -translate-x-1/2 z-10 bottom-16"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
@@ -133,12 +125,11 @@ const HeroSection = () => {
           onClick={handleMapClick}
         >
           <div className="glass p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow">
-            <MapPin size={32} className="text-primary" />
+            <MapPin size={32} className="text-red-500" />
           </div>
         </motion.div>
       </motion.div>
 
-      {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/30 to-transparent dark:from-gray-900/50"></div>
     </section>
   );
