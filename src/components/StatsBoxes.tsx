@@ -40,13 +40,13 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 dark:bg-black dark:border-gray-800"
+            className="bg-white w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
               <Users className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{count}+</h3>
-            <p className="text-gray-600 dark:text-gray-300">Happy Clients</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">{count}+</h3>
+            <p className="text-gray-600">Happy Clients</p>
           </motion.div>
 
           {/* Rating Box */}
@@ -54,12 +54,12 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 dark:bg-black dark:border-gray-800"
+            className="bg-white w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
               <Star className="h-6 w-6 text-secondary" />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{rating}</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">{rating}</h3>
             <div className="flex justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -67,12 +67,12 @@ const StatsBoxes = () => {
                   className={`h-4 w-4 ${
                     i < Math.floor(rating)
                       ? "text-secondary fill-current"
-                      : "text-gray-300 dark:text-gray-600"
+                      : "text-gray-300"
                   }`}
                 />
               ))}
             </div>
-            <p className="text-gray-600 dark:text-gray-300">Average Rating</p>
+            <p className="text-gray-600">Average Rating</p>
           </motion.div>
 
           {/* Service Hours Box */}
@@ -80,14 +80,14 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 dark:bg-black dark:border-gray-800"
+            className="bg-white w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20">
-              <Clock className="h-6 w-6 text-accent-foreground dark:text-white" />
+              <Clock className="h-6 w-6 text-accent-foreground" />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">24/7</h3>
-            <p className="text-gray-600 dark:text-gray-300">Support Available</p>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">365 Days</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">24/7</h3>
+            <p className="text-gray-600">Support Available</p>
+            <p className="text-gray-500 mt-1">365 Days</p>
           </motion.div>
         </div>
       </div>
