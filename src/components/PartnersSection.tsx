@@ -54,7 +54,7 @@ const PartnersSection = () => {
                 boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                 backgroundColor: "rgba(255,255,255,0.95)"
               }}
-              className="glass p-8 rounded-xl text-center transition-all duration-300"
+              className="glass p-8 rounded-xl text-center transition-all duration-300 dark:bg-black dark:border-gray-800"
             >
               <div className="text-4xl mb-4 transform transition-transform duration-300 hover:scale-110">{partner.logo}</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{partner.name}</h3>

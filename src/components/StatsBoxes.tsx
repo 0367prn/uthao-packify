@@ -40,7 +40,7 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300"
+            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 dark:bg-black dark:border-gray-800"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
               <Users className="h-6 w-6 text-primary" />
@@ -54,7 +54,7 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300"
+            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 dark:bg-black dark:border-gray-800"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
               <Star className="h-6 w-6 text-secondary" />
@@ -80,7 +80,7 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300"
+            className="glass w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 dark:bg-black dark:border-gray-800"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20">
               <Clock className="h-6 w-6 text-accent-foreground dark:text-white" />
