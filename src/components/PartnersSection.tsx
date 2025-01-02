@@ -37,8 +37,8 @@ const PartnersSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Our Trusted Partners</h2>
-          <p className="text-gray-600 dark:text-gray-300">Working with the best in the industry</p>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Trusted Partners</h2>
+          <p className="text-gray-600">Working with the best in the industry</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -51,14 +51,13 @@ const PartnersSection = () => {
               transition={{ delay: index * 0.2 }}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                backgroundColor: "rgba(255,255,255,0.95)"
+                boxShadow: "0 10px 30px rgba(0,0,0,0.1)"
               }}
-              className="glass p-8 rounded-xl text-center transition-all duration-300 dark:bg-black dark:border-gray-800"
+              className="bg-white p-8 rounded-xl text-center transition-all duration-300 shadow-lg border border-gray-100"
             >
               <div className="text-4xl mb-4 transform transition-transform duration-300 hover:scale-110">{partner.logo}</div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{partner.name}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{partner.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{partner.name}</h3>
+              <p className="text-gray-600">{partner.description}</p>
             </motion.div>
           ))}
         </div>
