@@ -4,21 +4,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Vijay Dixit",
     role: "Homeowner",
     image: "/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png",
     content: "The best moving service I've ever used! They were professional, efficient, and careful with all my belongings.",
     rating: 4.5,
   },
   {
-    name: "Michael Chen",
+    name: "Prince",
     role: "Business Owner",
     image: null,
     content: "Excellent service for our office relocation. The team was organized and completed the move ahead of schedule.",
     rating: 5,
   },
   {
-    name: "Emily Davis",
+    name: "Ramraj",
     role: "Apartment Resident",
     image: null,
     content: "Very impressed with their packing service. They made my interstate move completely stress-free.",
