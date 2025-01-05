@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Vijay Dixit",
     role: "Homeowner",
-    image: "/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     content: "The best moving service I've ever used! They were professional, efficient, and careful with all my belongings.",
     rating: 4.5,
   },
