@@ -41,9 +41,15 @@ const Footer = () => {
           >
             <h4 className="text-xl font-semibold mb-4">Contact</h4>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5" />
-                <span className="text-gray-400">+1 234 567 890</span>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5" />
+                  <span className="text-gray-400">+91 8924839930</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5" />
+                  <span className="text-gray-400">+91 8090002299</span>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5" />
@@ -51,7 +57,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5" />
-                <span className="text-gray-400">123 Moving Street, City</span>
+                <span className="text-gray-400">Sec J jankipuram Sulabh Awas C5 apartment, kursi road, lucknow</span>
               </div>
             </div>
           </motion.div>
