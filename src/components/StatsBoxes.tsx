@@ -31,6 +31,8 @@ const StatsBoxes = () => {
     }
   }, [inView]);
 
+  const boxClassName = "bg-white w-full md:w-[280px] h-[200px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100 flex flex-col items-center justify-center";
+
   return (
     <section className="w-full py-16 bg-background">
       <div ref={ref} className="container mx-auto px-4">
@@ -40,7 +42,7 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="bg-white w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100"
+            className={boxClassName}
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
               <Users className="h-6 w-6 text-primary" />
@@ -54,7 +56,7 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100"
+            className={boxClassName}
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
               <Star className="h-6 w-6 text-secondary" />
@@ -80,7 +82,7 @@ const StatsBoxes = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white w-full md:w-[280px] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100"
+            className={boxClassName}
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20">
               <Clock className="h-6 w-6 text-accent-foreground" />
