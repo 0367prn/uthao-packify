@@ -50,7 +50,7 @@ const Navbar = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: Facebook, href: "https://www.facebook.com/share/14q4LN6U7A/", label: "Facebook" },
     { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/uthaopackkaro?igsh=MWh3cXUzaWpuenR4MA==", label: "Instagram" },
   ];
