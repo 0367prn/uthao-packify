@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, StarHalf, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, StarHalf } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Carousel,
