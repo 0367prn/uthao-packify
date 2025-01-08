@@ -47,7 +47,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Packing & Moving
+            Moving & Packing
             <br />
             <motion.span 
               className="text-primary"
