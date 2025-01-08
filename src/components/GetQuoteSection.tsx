@@ -22,7 +22,7 @@ const GetQuoteSection = () => {
       `📅 Date: ${formData.date}\n` +
       `🏠 Home Size: ${formData.size}\n\n` +
       `Please provide me with a quote for my move. Thank you!`;
-    const whatsappUrl = `https://wa.me/+919335922299?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+918924839930?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
