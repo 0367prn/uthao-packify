@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { services } from "@/lib/data";
 import { useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ServicesSection = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [tappedService, setTappedService] = useState<string | null>(null);
+  const isMobile = useIsMobile();
 
   const serviceDetails = {
     "Local Moving": [
@@ -36,6 +39,21 @@ const ServicesSection = () => {
     ]
   };
 
+  const handleServiceInteraction = (title: string) => {
+    if (isMobile) {
+      setTappedService(tappedService === title ? null : title);
+    } else {
+      setHoveredService(title);
+    }
+  };
+
+  const isServiceActive = (title: string) => {
+    if (isMobile) {
+      return tappedService === title;
+    }
+    return hoveredService === title;
+  };
+
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -58,14 +76,15 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className="relative h-[300px] overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
-              onHoverStart={() => setHoveredService(service.title)}
-              onHoverEnd={() => setHoveredService(null)}
+              onHoverStart={() => !isMobile && handleServiceInteraction(service.title)}
+              onHoverEnd={() => !isMobile && handleServiceInteraction("")}
+              onClick={() => isMobile && handleServiceInteraction(service.title)}
             >
               <motion.div
                 className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
                 initial={{ x: 0 }}
                 animate={{ 
-                  x: hoveredService === service.title ? '-100%' : 0,
+                  x: isServiceActive(service.title) ? '-100%' : 0,
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -82,7 +101,7 @@ const ServicesSection = () => {
                 className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
                 initial={{ x: '100%' }}
                 animate={{ 
-                  x: hoveredService === service.title ? '0' : '100%',
+                  x: isServiceActive(service.title) ? '0' : '100%',
                 }}
                 transition={{ duration: 0.3 }}
               >
