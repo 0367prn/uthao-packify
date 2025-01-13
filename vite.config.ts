@@ -11,13 +11,13 @@ export default defineConfig(({ mode }) => ({
     strictPort: true,
   },
   build: {
-    outDir: "dist", // Output directory for production build
-    assetsDir: "assets", // Where to place assets
-    sourcemap: false, // Disable sourcemaps in production for better performance
-    minify: "terser", // Use terser for better minification
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
+    minify: "esbuild", // Changed from terser to esbuild for better performance
     rollupOptions: {
       output: {
-        manualChunks: undefined, // Optimize chunk splitting
+        manualChunks: undefined,
       },
     },
   },
