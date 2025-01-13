@@ -63,7 +63,7 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Our Services</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300">
             Comprehensive moving solutions tailored to your needs
           </p>
         </motion.div>
@@ -75,7 +75,13 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="relative h-[300px] overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6"
+              className={`
+                relative h-[300px] overflow-hidden rounded-lg 
+                border border-gray-200 dark:border-gray-700 
+                bg-white dark:bg-gray-800 p-6
+                md:border-b-0
+                ${index !== services.length - 1 ? 'border-b-2 md:border-b-0 mb-8 md:mb-0' : ''}
+              `}
               onHoverStart={() => !isMobile && handleServiceInteraction(service.title)}
               onHoverEnd={() => !isMobile && handleServiceInteraction("")}
               onClick={() => isMobile && handleServiceInteraction(service.title)}
