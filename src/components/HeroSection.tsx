@@ -6,10 +6,14 @@ import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
   const navigate = useNavigate();
   
-  const scrollToQuote = () => {
+  const scrollToQuote = (e: React.MouseEvent) => {
+    e.preventDefault();
     const quoteSection = document.getElementById('quote');
     if (quoteSection) {
-      quoteSection.scrollIntoView({ behavior: 'smooth' });
+      quoteSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
 
@@ -72,11 +76,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
+            className="w-full"
           >
             <Button 
               onClick={scrollToQuote}
               size="lg"
-              className="bg-primary hover:bg-primary-hover text-white text-lg px-8 py-6 rounded-full"
+              className="bg-primary hover:bg-primary-hover text-white text-lg px-8 py-6 rounded-full w-full md:w-auto"
             >
               Get Started Now
             </Button>
