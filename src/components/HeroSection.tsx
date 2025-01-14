@@ -76,12 +76,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="w-full"
+            className="w-full flex justify-center"
           >
             <Button 
               onClick={scrollToQuote}
               size="lg"
-              className="bg-primary hover:bg-primary-hover text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 rounded-full w-full md:w-auto"
+              className="bg-primary hover:bg-primary-hover text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 rounded-full w-full md:w-auto cursor-pointer"
             >
               Get Started Now
             </Button>
@@ -103,7 +103,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex justify-center w-full"
+        className="absolute bottom-8 left-0 right-0 flex justify-center items-center z-10"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
