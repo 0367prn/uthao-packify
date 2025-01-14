@@ -81,7 +81,7 @@ const HeroSection = () => {
             <Button 
               onClick={scrollToQuote}
               size="lg"
-              className="bg-primary hover:bg-primary-hover text-white text-lg px-8 py-6 rounded-full w-full md:w-auto"
+              className="bg-primary hover:bg-primary-hover text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 rounded-full w-full md:w-auto"
             >
               Get Started Now
             </Button>
@@ -103,7 +103,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 mt-16"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex justify-center w-full"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
@@ -123,7 +123,7 @@ const HeroSection = () => {
           onClick={handleMapClick}
         >
           <div className="glass p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow">
-            <MapPin size={24} className="text-red-500 md:w-6 md:h-6" />
+            <MapPin size={20} className="text-red-500 md:w-6 md:h-6" />
           </div>
         </motion.div>
       </motion.div>
