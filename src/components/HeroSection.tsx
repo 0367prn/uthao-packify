@@ -81,7 +81,7 @@ const HeroSection = () => {
             <Button 
               onClick={scrollToQuote}
               size="lg"
-              className="bg-primary hover:bg-primary-hover text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 rounded-full w-full md:w-auto cursor-pointer"
+              className="bg-primary hover:bg-primary-hover text-white text-sm md:text-lg px-4 md:px-8 py-2 md:py-6 rounded-full w-[200px] md:w-auto cursor-pointer"
             >
               Get Started Now
             </Button>
