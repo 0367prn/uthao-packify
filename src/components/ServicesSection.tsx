@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { services } from "@/lib/data";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ChevronRight } from "lucide-react";
 
 const ServicesSection = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
@@ -84,7 +85,6 @@ const ServicesSection = () => {
               `}
               onHoverStart={() => !isMobile && handleServiceInteraction(service.title)}
               onHoverEnd={() => !isMobile && handleServiceInteraction("")}
-              onClick={() => isMobile && handleServiceInteraction(service.title)}
             >
               <motion.div
                 className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
@@ -101,6 +101,28 @@ const ServicesSection = () => {
                 <p className="text-gray-600 dark:text-gray-300">
                   {service.description}
                 </p>
+                {isMobile && (
+                  <motion.button
+                    onClick={() => handleServiceInteraction(service.title)}
+                    className="mt-4 flex items-center gap-2 text-primary text-sm font-medium"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>Tap for details</span>
+                    <motion.div
+                      animate={{
+                        x: [0, 5, 0],
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </motion.div>
+                  </motion.button>
+                )}
               </motion.div>
 
               <motion.div
@@ -121,6 +143,28 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
+                {isMobile && (
+                  <motion.button
+                    onClick={() => handleServiceInteraction(service.title)}
+                    className="mt-4 flex items-center gap-2 text-primary text-sm font-medium"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>Back to service</span>
+                    <motion.div
+                      animate={{
+                        x: [0, -5, 0],
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <ChevronRight className="h-4 w-4 rotate-180" />
+                    </motion.div>
+                  </motion.button>
+                )}
               </motion.div>
             </motion.div>
           ))}
