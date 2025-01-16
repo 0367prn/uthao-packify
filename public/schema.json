@@ -3,17 +3,17 @@
   "@type": "MovingCompany",
   "name": "Uthao Packify",
   "image": "/og-image.png",
-  "description": "Professional packers and movers providing comprehensive moving, packing, and logistics services across Uttar Pradesh. Specializing in home shifting, office relocation, and vehicle transportation.",
+  "description": "Professional packers and movers providing comprehensive moving, packing, and logistics services across Uttar Pradesh. Find out how much it costs to shift your home or office. Expert in safe and secure relocation services with free quotes and 24/7 support.",
   "@id": "https://uthaopackify.com",
   "url": "https://uthaopackify.com",
-  "telephone": "+91-XXXXXXXXXX",
+  "telephone": "+91-8924839930",
   "priceRange": "₹₹",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Your Street Address",
+    "streetAddress": "Sec J jankipuram Sulabh Awas C5 apartment, kursi road",
     "addressLocality": "Lucknow",
     "addressRegion": "Uttar Pradesh",
-    "postalCode": "226XXX",
+    "postalCode": "226021",
     "addressCountry": "IN"
   },
   "geo": {
@@ -63,7 +63,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Home Shifting Services",
-          "description": "Professional home relocation services with packing, loading, transportation, and unpacking"
+          "description": "How much does home shifting cost? Get professional home relocation services with expert packing, loading, transportation, and unpacking at affordable prices"
         }
       },
       {
@@ -71,7 +71,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Office Relocation",
-          "description": "Complete office moving solutions including IT equipment, furniture, and documents"
+          "description": "Looking for the best office relocation service? Complete office moving solutions including IT equipment, furniture, and documents with safe handling"
         }
       },
       {
@@ -79,7 +79,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Vehicle Transportation",
-          "description": "Safe and secure car, bike, and vehicle transportation services"
+          "description": "Where to find reliable car transport services? Safe and secure car, bike, and vehicle transportation with door-to-door delivery"
         }
       },
       {
@@ -87,7 +87,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Storage Solutions",
-          "description": "Short-term and long-term storage facilities with 24/7 security"
+          "description": "Need temporary storage for belongings? Short-term and long-term storage facilities with 24/7 security and climate control"
         }
       },
       {
@@ -95,7 +95,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Express Moving",
-          "description": "Same-day and next-day moving services for urgent relocations"
+          "description": "Who provides same-day moving services? Get urgent relocation with same-day and next-day moving services at competitive rates"
         }
       }
     ]
