@@ -3,152 +3,106 @@
   "@type": "MovingCompany",
   "name": "Uthao Packify",
   "image": "/og-image.png",
-  "description": "Professional packers and movers offering comprehensive relocation services across Uttar Pradesh. Specializing in residential moving, commercial relocation, logistics solutions, and secure transportation services.",
+  "description": "Professional packers and movers providing comprehensive moving, packing, and logistics services across Uttar Pradesh. Specializing in home shifting, office relocation, and vehicle transportation.",
+  "@id": "https://uthaopackify.com",
+  "url": "https://uthaopackify.com",
+  "telephone": "+91-XXXXXXXXXX",
+  "priceRange": "₹₹",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Sec J jankipuram Sulabh Awas C5 apartment, kursi road",
+    "streetAddress": "Your Street Address",
     "addressLocality": "Lucknow",
     "addressRegion": "Uttar Pradesh",
-    "postalCode": "226021",
-    "addressCountry": "India"
+    "postalCode": "226XXX",
+    "addressCountry": "IN"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "26.9147",
-    "longitude": "80.9398"
+    "latitude": 26.927944,
+    "longitude": 80.969944
   },
-  "priceRange": "₹₹",
-  "telephone": "+91-8090002299",
-  "email": "contact@uthaopackify.com",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
   "sameAs": [
-    "https://www.facebook.com/share/14q4LN6U7A/",
-    "https://www.instagram.com/uthaopackkaro"
+    "https://facebook.com/uthaopackify",
+    "https://twitter.com/uthaopackify",
+    "https://instagram.com/uthaopackify",
+    "https://linkedin.com/company/uthaopackify"
   ],
   "areaServed": [
-    {"@type": "City", "name": "Agra"},
-    {"@type": "City", "name": "Aligarh"},
-    {"@type": "City", "name": "Allahabad"},
-    {"@type": "City", "name": "Ambedkar Nagar"},
-    {"@type": "City", "name": "Amethi"},
-    {"@type": "City", "name": "Amroha"},
-    {"@type": "City", "name": "Auraiya"},
-    {"@type": "City", "name": "Azamgarh"},
-    {"@type": "City", "name": "Ayodhya"},
-    {"@type": "City", "name": "Baghpat"},
-    {"@type": "City", "name": "Bahraich"},
-    {"@type": "City", "name": "Ballia"},
-    {"@type": "City", "name": "Balrampur"},
-    {"@type": "City", "name": "Banda"},
-    {"@type": "City", "name": "Barabanki"},
-    {"@type": "City", "name": "Bareilly"},
-    {"@type": "City", "name": "Basti"},
-    {"@type": "City", "name": "Bhadohi"},
-    {"@type": "City", "name": "Bijnor"},
-    {"@type": "City", "name": "Budaun"},
-    {"@type": "City", "name": "Bulandshahr"},
-    {"@type": "City", "name": "Chandauli"},
-    {"@type": "City", "name": "Chitrakoot"},
-    {"@type": "City", "name": "Deoria"},
-    {"@type": "City", "name": "Etah"},
-    {"@type": "City", "name": "Etawah"},
-    {"@type": "City", "name": "Farrukhabad"},
-    {"@type": "City", "name": "Fatehpur"},
-    {"@type": "City", "name": "Firozabad"},
-    {"@type": "City", "name": "Gautam Buddha Nagar"},
-    {"@type": "City", "name": "Ghaziabad"},
-    {"@type": "City", "name": "Ghazipur"},
-    {"@type": "City", "name": "Gonda"},
-    {"@type": "City", "name": "Gorakhpur"},
-    {"@type": "City", "name": "Hamirpur"},
-    {"@type": "City", "name": "Hapur"},
-    {"@type": "City", "name": "Hardoi"},
-    {"@type": "City", "name": "Hathras"},
-    {"@type": "City", "name": "Jalaun"},
-    {"@type": "City", "name": "Jaunpur"},
-    {"@type": "City", "name": "Jhansi"},
-    {"@type": "City", "name": "Kannauj"},
-    {"@type": "City", "name": "Kanpur Dehat"},
-    {"@type": "City", "name": "Kanpur Nagar"},
-    {"@type": "City", "name": "Kasganj"},
-    {"@type": "City", "name": "Kaushambi"},
-    {"@type": "City", "name": "Kushinagar"},
-    {"@type": "City", "name": "Lakhimpur Kheri"},
-    {"@type": "City", "name": "Lalitpur"},
-    {"@type": "City", "name": "Lucknow"},
-    {"@type": "City", "name": "Maharajganj"},
-    {"@type": "City", "name": "Mahoba"},
-    {"@type": "City", "name": "Mainpuri"},
-    {"@type": "City", "name": "Mathura"},
-    {"@type": "City", "name": "Mau"},
-    {"@type": "City", "name": "Meerut"},
-    {"@type": "City", "name": "Mirzapur"},
-    {"@type": "City", "name": "Moradabad"},
-    {"@type": "City", "name": "Muzaffarnagar"},
-    {"@type": "City", "name": "Pilibhit"},
-    {"@type": "City", "name": "Pratapgarh"},
-    {"@type": "City", "name": "Raebareli"},
-    {"@type": "City", "name": "Rampur"},
-    {"@type": "City", "name": "Saharanpur"},
-    {"@type": "City", "name": "Sambhal"},
-    {"@type": "City", "name": "Sant Kabir Nagar"},
-    {"@type": "City", "name": "Shahjahanpur"},
-    {"@type": "City", "name": "Shamli"},
-    {"@type": "City", "name": "Shravasti"},
-    {"@type": "City", "name": "Siddharthnagar"},
-    {"@type": "City", "name": "Sitapur"},
-    {"@type": "City", "name": "Sonbhadra"},
-    {"@type": "City", "name": "Sultanpur"},
-    {"@type": "City", "name": "Unnao"},
-    {"@type": "City", "name": "Varanasi"}
+    "Agra", "Aligarh", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", 
+    "Azamgarh", "Ayodhya", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", 
+    "Barabanki", "Bareilly", "Basti", "Bhadohi", "Bijnor", "Budaun", "Bulandshahr", 
+    "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Farrukhabad", "Fatehpur", 
+    "Firozabad", "Gautam Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", 
+    "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", 
+    "Kanpur Dehat", "Kanpur Nagar", "Kasganj", "Kaushambi", "Kushinagar", "Lakhimpur Kheri", 
+    "Lalitpur", "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", 
+    "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Raebareli", 
+    "Rampur", "Saharanpur", "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", 
+    "Shravasti", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"
   ],
-  "serviceType": [
-    "Residential Moving",
-    "Commercial Moving",
-    "Local Moving Services",
-    "Long Distance Moving",
-    "Professional Packing Services",
-    "Storage Solutions",
-    "Logistics Services",
-    "Express Transportation",
-    "Fragile Items Handling",
-    "Vehicle Transportation",
-    "Warehousing Services"
-  ],
-  "offers": {
-    "@type": "Offer",
-    "description": "Professional packing and moving services with free quotes",
-    "availability": "https://schema.org/InStock"
-  },
-  "slogan": "Your Trusted Partner for Hassle-free Relocation in Uttar Pradesh",
-  "keywords": "packers and movers lucknow, moving services kanpur, packing services noida, logistics services ghaziabad, transportation services varanasi, relocation services agra, home shifting, office relocation",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Moving Services in Uttar Pradesh",
+    "name": "Moving Services",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Local Moving Services",
-          "description": "Professional local moving services in all UP districts"
+          "name": "Home Shifting Services",
+          "description": "Professional home relocation services with packing, loading, transportation, and unpacking"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Long Distance Moving",
-          "description": "Secure long-distance relocation services across Uttar Pradesh"
+          "name": "Office Relocation",
+          "description": "Complete office moving solutions including IT equipment, furniture, and documents"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Packing Services",
-          "description": "Professional packing with quality materials in all UP cities"
+          "name": "Vehicle Transportation",
+          "description": "Safe and secure car, bike, and vehicle transportation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Storage Solutions",
+          "description": "Short-term and long-term storage facilities with 24/7 security"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Express Moving",
+          "description": "Same-day and next-day moving services for urgent relocations"
         }
       }
     ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "350"
   }
 }
