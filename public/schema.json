@@ -1,47 +1,49 @@
 {
   "@context": "https://schema.org",
-  "@type": "MovingCompany",
-  "name": "Uthao Packify",
-  "image": "/og-image.png",
-  "description": "Professional packers and movers providing comprehensive moving, packing, and logistics services across Uttar Pradesh. Find out how much it costs to shift your home or office. Expert in safe and secure relocation services with free quotes and 24/7 support.",
-  "@id": "https://uthaopackify.com",
-  "url": "https://uthaopackify.com",
-  "telephone": "+91-8924839930",
-  "priceRange": "₹₹",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Sec J jankipuram Sulabh Awas C5 apartment, kursi road",
-    "addressLocality": "Lucknow",
-    "addressRegion": "Uttar Pradesh",
-    "postalCode": "226021",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 26.927944,
-    "longitude": 80.969944
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  },
-  "sameAs": [
-    "https://facebook.com/uthaopackify",
-    "https://twitter.com/uthaopackify",
-    "https://instagram.com/uthaopackify",
-    "https://linkedin.com/company/uthaopackify"
-  ],
-  "areaServed": [
+  "@graph": [
+    {
+      "@type": "MovingCompany",
+      "name": "Uthao Packify",
+      "image": "/og-image.png",
+      "description": "Professional packers and movers providing comprehensive moving, packing, and logistics services across Uttar Pradesh. Find out how much it costs to shift your home or office. Expert in safe and secure relocation services with free quotes and 24/7 support.",
+      "@id": "https://uthaopackify.com",
+      "url": "https://uthaopackify.com",
+      "telephone": "+91-8924839930",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sec J jankipuram Sulabh Awas C5 apartment, kursi road",
+        "addressLocality": "Lucknow",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "226021",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.927944,
+        "longitude": 80.969944
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://facebook.com/uthaopackify",
+        "https://twitter.com/uthaopackify",
+        "https://instagram.com/uthaopackify",
+        "https://linkedin.com/company/uthaopackify"
+      ],
+      "areaServed": [
     "Agra", "Aligarh", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", 
     "Azamgarh", "Ayodhya", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", 
     "Barabanki", "Bareilly", "Basti", "Bhadohi", "Bijnor", "Budaun", "Bulandshahr", 
@@ -53,56 +55,100 @@
     "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Raebareli", 
     "Rampur", "Saharanpur", "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", 
     "Shravasti", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Moving Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Home Shifting Services",
-          "description": "How much does home shifting cost? Get professional home relocation services with expert packing, loading, transportation, and unpacking at affordable prices"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://uthaopackify.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://uthaopackify.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contact",
+          "item": "https://uthaopackify.com/contact"
         }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Office Relocation",
-          "description": "Looking for the best office relocation service? Complete office moving solutions including IT equipment, furniture, and documents with safe handling"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does home shifting cost in Lucknow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost of home shifting in Lucknow typically ranges from ₹3,000 to ₹25,000 depending on the size of your home, distance, and specific requirements. Contact us for a free quote tailored to your needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which areas do you serve in Uttar Pradesh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide comprehensive moving services across all 75 districts of Uttar Pradesh, including major cities like Lucknow, Kanpur, Varanasi, Noida, and Ghaziabad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What packing materials do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use high-quality packing materials including bubble wrap, corrugated boxes, foam sheets, plastic wraps, and custom wooden crates for delicate items to ensure maximum protection during transit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide insurance for goods during transit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer comprehensive transit insurance coverage for your valuable belongings. The insurance cost is calculated based on the declared value of your goods."
+          }
         }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Home Shifting Services",
+      "serviceType": "Moving Service",
+      "areaServed": "Uttar Pradesh",
+      "provider": {
+        "@type": "MovingCompany",
+        "name": "Uthao Packify"
       },
-      {
+      "description": "Professional home relocation services including packing, loading, transportation, and unpacking with expert care and attention.",
+      "offers": {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Vehicle Transportation",
-          "description": "Where to find reliable car transport services? Safe and secure car, bike, and vehicle transportation with door-to-door delivery"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Storage Solutions",
-          "description": "Need temporary storage for belongings? Short-term and long-term storage facilities with 24/7 security and climate control"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Express Moving",
-          "description": "Who provides same-day moving services? Get urgent relocation with same-day and next-day moving services at competitive rates"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "3000",
+          "priceCurrency": "INR",
+          "minPrice": "3000",
+          "maxPrice": "25000"
         }
       }
-    ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "350"
-  }
+    },
+    {
+      "@type": "AggregateRating",
+      "itemReviewed": {
+        "@type": "MovingCompany",
+        "name": "Uthao Packify"
+      },
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "350",
+      "reviewCount": "350"
+    }
+  ]
 }
