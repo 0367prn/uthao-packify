@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { services } from "@/lib/data";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { ChevronRight } from "lucide-react";
+import ServiceCard from "./ServiceCard";
 
 const ServicesSection = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
@@ -71,102 +71,14 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <ServiceCard
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className={`
-                relative h-[300px] overflow-hidden rounded-lg 
-                border border-gray-200 dark:border-gray-700 
-                bg-white dark:bg-gray-800 p-6
-                md:border-b-0
-                ${index !== services.length - 1 ? 'border-b-2 md:border-b-0 mb-8 md:mb-0' : ''}
-              `}
-              onHoverStart={() => !isMobile && handleServiceInteraction(service.title)}
-              onHoverEnd={() => !isMobile && handleServiceInteraction("")}
-            >
-              <motion.div
-                className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
-                initial={{ x: 0 }}
-                animate={{ 
-                  x: isServiceActive(service.title) ? '-100%' : 0,
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <service.icon className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {service.description}
-                </p>
-                {isMobile && (
-                  <motion.button
-                    onClick={() => handleServiceInteraction(service.title)}
-                    className="mt-4 flex items-center gap-2 text-primary text-sm font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span>Tap for details</span>
-                    <motion.div
-                      animate={{
-                        x: [0, 5, 0],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </motion.div>
-                  </motion.button>
-                )}
-              </motion.div>
-
-              <motion.div
-                className="absolute inset-0 p-6 bg-white dark:bg-gray-800"
-                initial={{ x: '100%' }}
-                animate={{ 
-                  x: isServiceActive(service.title) ? '0' : '100%',
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <h4 className="text-lg font-semibold mb-3 text-primary">
-                  {service.title} Services
-                </h4>
-                <ul className="text-sm space-y-2 text-left">
-                  {serviceDetails[service.title as keyof typeof serviceDetails]?.map((detail, i) => (
-                    <li key={i} className="text-gray-600 dark:text-gray-300">
-                      • {detail}
-                    </li>
-                  ))}
-                </ul>
-                {isMobile && (
-                  <motion.button
-                    onClick={() => handleServiceInteraction(service.title)}
-                    className="mt-4 flex items-center gap-2 text-primary text-sm font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span>Back to service</span>
-                    <motion.div
-                      animate={{
-                        x: [0, -5, 0],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <ChevronRight className="h-4 w-4 rotate-180" />
-                    </motion.div>
-                  </motion.button>
-                )}
-              </motion.div>
-            </motion.div>
+              service={service}
+              isActive={isServiceActive(service.title)}
+              onInteraction={handleServiceInteraction}
+              isMobile={isMobile}
+              serviceDetails={serviceDetails}
+            />
           ))}
         </div>
       </div>
