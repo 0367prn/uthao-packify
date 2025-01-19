@@ -3,9 +3,9 @@
   "@graph": [
     {
       "@type": "MovingCompany",
-      "name": "Best Packers and Movers in UP - Uthao Packify",
+      "name": "Best Packers and Movers Near Me in UP - Uthao Packify",
       "image": "/og-image.png",
-      "description": "Leading packers and movers in Uttar Pradesh providing professional moving, packing, and logistics services. Expert in home shifting, office relocation, and vehicle transportation with best prices and 24/7 support. Serving all major cities including Lucknow, Kanpur, Noida, and Varanasi.",
+      "description": "Leading packers and movers near you in Uttar Pradesh. Professional moving, packing, and logistics services at best prices. Expert in local home shifting, office relocation, and vehicle transportation. 24/7 support available in all major UP cities including Lucknow, Kanpur, Noida, and Varanasi.",
       "@id": "https://uthaopackify.com",
       "url": "https://uthaopackify.com",
       "telephone": "+91-8924839930",
@@ -58,45 +58,30 @@
       ]
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://uthaopackify.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://uthaopackify.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Contact",
-          "item": "https://uthaopackify.com/contact"
-        }
-      ]
-    },
-    {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How much does home shifting cost in Lucknow?",
+          "name": "How much do packers and movers charge near me in Lucknow?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The cost of home shifting in Lucknow typically ranges from ₹3,000 to ₹25,000 depending on the size of your home, distance, and specific requirements. We offer competitive rates with transparent pricing and no hidden charges. Contact us for a free quote tailored to your needs."
+            "text": "Local moving charges in Lucknow start from ₹3,000 for 1BHK, ₹4,500 for 2BHK, and ₹6,000 for 3BHK homes. Final cost depends on items quantity, floor level, and specific requirements. We offer transparent pricing with no hidden charges."
           }
         },
         {
           "@type": "Question",
-          "name": "What are your service areas in Uttar Pradesh?",
+          "name": "Which are the best packers and movers near me in Noida?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We provide comprehensive moving services across all 75 districts of Uttar Pradesh, with specialized teams in major cities like Lucknow, Kanpur, Varanasi, Noida, and Ghaziabad. Our network ensures efficient service delivery throughout UP."
+            "text": "Uthao Packify is rated as one of the best packers and movers in Noida with 350+ 5-star reviews. We offer professional packing, safe transportation, and timely delivery with 24/7 support and real-time tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to find reliable movers and packers near me in Kanpur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for licensed, experienced movers with good reviews. Uthao Packify in Kanpur offers verified staff, insurance coverage, and professional packing materials. Get free quotes and compare services before booking."
           }
         },
         {
@@ -151,14 +136,14 @@
     },
     {
       "@type": "Service",
-      "name": "Home Shifting Services",
+      "name": "Local Moving Services Near Me",
       "serviceType": "Moving Service",
       "areaServed": "Uttar Pradesh",
       "provider": {
         "@type": "MovingCompany",
         "name": "Uthao Packify"
       },
-      "description": "Professional home relocation services including packing, loading, transportation, and unpacking with expert care and attention.",
+      "description": "Professional local moving services including packing, loading, transportation, and unpacking. Available in all UP cities with same-day service options.",
       "offers": {
         "@type": "Offer",
         "priceSpecification": {
@@ -169,18 +154,6 @@
           "maxPrice": "25000"
         }
       }
-    },
-    {
-      "@type": "AggregateRating",
-      "itemReviewed": {
-        "@type": "MovingCompany",
-        "name": "Uthao Packify"
-      },
-      "ratingValue": "4.8",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "350",
-      "reviewCount": "350"
     }
   ]
 }

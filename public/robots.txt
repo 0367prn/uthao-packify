@@ -6,3 +6,19 @@ Sitemap: https://uthaopackify.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 10
+
+# Allow search engines to crawl JavaScript and CSS files
+Allow: /*.js$
+Allow: /*.css$
+
+# Allow search engines to crawl image files
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Prevent crawling of certain directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
