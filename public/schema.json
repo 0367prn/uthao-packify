@@ -5,7 +5,7 @@
       "@type": "MovingCompany",
       "name": "Best Packers and Movers in UP - Uthao Packify",
       "image": "/og-image.png",
-      "description": "Leading packers and movers in Uttar Pradesh providing professional moving, packing, and logistics services. Expert in home shifting, office relocation, and vehicle transportation with best prices and 24/7 support.",
+      "description": "Leading packers and movers in Uttar Pradesh providing professional moving, packing, and logistics services. Expert in home shifting, office relocation, and vehicle transportation with best prices and 24/7 support. Serving all major cities including Lucknow, Kanpur, Noida, and Varanasi.",
       "@id": "https://uthaopackify.com",
       "url": "https://uthaopackify.com",
       "telephone": "+91-8924839930",
@@ -88,31 +88,63 @@
           "name": "How much does home shifting cost in Lucknow?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The cost of home shifting in Lucknow typically ranges from ₹3,000 to ₹25,000 depending on the size of your home, distance, and specific requirements. Contact us for a free quote tailored to your needs."
+            "text": "The cost of home shifting in Lucknow typically ranges from ₹3,000 to ₹25,000 depending on the size of your home, distance, and specific requirements. We offer competitive rates with transparent pricing and no hidden charges. Contact us for a free quote tailored to your needs."
           }
         },
         {
           "@type": "Question",
-          "name": "Which areas do you serve in Uttar Pradesh?",
+          "name": "What are your service areas in Uttar Pradesh?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We provide comprehensive moving services across all 75 districts of Uttar Pradesh, including major cities like Lucknow, Kanpur, Varanasi, Noida, and Ghaziabad."
+            "text": "We provide comprehensive moving services across all 75 districts of Uttar Pradesh, with specialized teams in major cities like Lucknow, Kanpur, Varanasi, Noida, and Ghaziabad. Our network ensures efficient service delivery throughout UP."
           }
         },
         {
           "@type": "Question",
-          "name": "What packing materials do you use?",
+          "name": "What types of packing materials do you use for different items?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We use high-quality packing materials including bubble wrap, corrugated boxes, foam sheets, plastic wraps, and custom wooden crates for delicate items to ensure maximum protection during transit."
+            "text": "We use high-quality packing materials including bubble wrap, corrugated boxes, foam sheets, plastic wraps, and custom wooden crates. Each item is packed according to its specific requirements - furniture with foam padding, electronics in anti-static wrapping, and delicate items in double-layer protection."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you provide insurance for goods during transit?",
+          "name": "Do you provide insurance coverage for goods during transit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, we offer comprehensive transit insurance coverage for your valuable belongings. The insurance cost is calculated based on the declared value of your goods."
+            "text": "Yes, we offer comprehensive transit insurance coverage for your valuable belongings. The insurance cost is calculated based on the declared value of your goods, providing peace of mind during the entire moving process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your charges for office relocation in Noida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Office relocation in Noida starts from ₹5,000, varying based on office size, equipment volume, and distance. We offer specialized corporate packages including IT equipment handling, furniture dismantling/assembly, and weekend moving options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle delicate items during moving?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We have a specialized team for handling delicate items like antiques, glass items, and electronics. Each item is individually wrapped, cushioned, and packed in custom boxes. We use air-bubble wrapping, foam sheets, and wooden crates for extra protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the estimated time for intercity moving within UP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Intercity moving time varies by distance and volume. Typically, moves between major cities (e.g., Lucknow to Kanpur) take 1-2 days, while longer distances (e.g., Lucknow to Noida) may take 2-3 days. We provide real-time tracking for all intercity moves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide storage facilities in Varanasi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer secure, climate-controlled storage facilities in Varanasi and other major UP cities. Our warehouses are equipped with 24/7 security, fire protection, and pest control. Short-term and long-term storage options are available at competitive rates."
           }
         }
       ]
