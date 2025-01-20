@@ -55,7 +55,52 @@
         "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Raebareli", 
         "Rampur", "Saharanpur", "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", 
         "Shravasti", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Moving Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Local House Shifting",
+              "description": "Professional home relocation services within city limits"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "3000",
+              "priceCurrency": "INR"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Office Relocation",
+              "description": "Complete office moving solutions with IT equipment handling"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "5000",
+              "priceCurrency": "INR"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vehicle Transportation",
+              "description": "Safe and secure car and bike transportation services"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "4000",
+              "priceCurrency": "INR"
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
