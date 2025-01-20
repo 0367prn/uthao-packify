@@ -5,7 +5,7 @@
       "@type": "MovingCompany",
       "name": "Best Packers and Movers Near Me in UP - Uthao Pack Karo",
       "image": "/og-image.png",
-      "description": "Leading packers and movers near you in Uttar Pradesh. Professional moving, packing, and logistics services at best prices. Expert in local home shifting, office relocation, and vehicle transportation. 24/7 support available in all major UP cities including Lucknow, Kanpur, Noida, and Varanasi.",
+      "description": "Leading packers and movers near you in Lucknow and Uttar Pradesh. Professional moving, packing, and logistics services at best prices near me. Expert in local home shifting, office relocation, and vehicle transportation near me. 24/7 support available in all major UP cities including Lucknow, Kanpur, Noida, and Varanasi.",
       "@id": "https://uthaopackkaro.com",
       "url": "https://uthaopackkaro.com",
       "telephone": "+91-8924839930",
@@ -36,75 +36,27 @@
         ],
         "opens": "00:00",
         "closes": "23:59"
-      },
-      "sameAs": [
-        "https://facebook.com/uthaopackkaro",
-        "https://twitter.com/uthaopackkaro",
-        "https://instagram.com/uthaopackkaro",
-        "https://linkedin.com/company/uthaopackkaro"
-      ],
-      "areaServed": [
-        "Agra", "Aligarh", "Prayagraj", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", 
-        "Azamgarh", "Ayodhya", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", 
-        "Barabanki", "Bareilly", "Basti", "Bhadohi", "Bijnor", "Budaun", "Bulandshahr", 
-        "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Farrukhabad", "Fatehpur", 
-        "Firozabad", "Gautam Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", 
-        "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", 
-        "Kanpur Dehat", "Kanpur Nagar", "Kasganj", "Kaushambi", "Kushinagar", "Lakhimpur Kheri", 
-        "Lalitpur", "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", 
-        "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Raebareli", 
-        "Rampur", "Saharanpur", "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", 
-        "Shravasti", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Moving Services Catalog",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Local House Shifting",
-              "description": "Professional home relocation services within city limits"
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "3000",
-              "priceCurrency": "INR"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Office Relocation",
-              "description": "Complete office moving solutions with IT equipment handling"
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "5000",
-              "priceCurrency": "INR"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Vehicle Transportation",
-              "description": "Safe and secure car and bike transportation services"
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "4000",
-              "priceCurrency": "INR"
-            }
-          }
-        ]
       }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to find packers and movers near me in Lucknow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uthao Pack Karo offers professional packing and moving services near you in Lucknow. We provide free quotes, experienced staff, and 24/7 support. Contact us at +91-8924839930 for immediate assistance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the moving charges near me in UP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Local moving charges near you start from ₹3,000 for 1BHK, ₹4,500 for 2BHK, and ₹6,000 for 3BHK homes. Final cost depends on items quantity, floor level, and specific requirements. We offer transparent pricing with no hidden charges."
+          }
+        },
         {
           "@type": "Question",
           "name": "How much do packers and movers charge near me in Lucknow?",
