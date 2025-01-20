@@ -1,0 +1,42 @@
+{
+  "@type": "Service",
+  "name": "Local Moving Services Near Me",
+  "serviceType": "Moving Service",
+  "areaServed": {
+    "@type": "State",
+    "name": "Uttar Pradesh",
+    "containsPlace": [
+      {
+        "@type": "City",
+        "name": "Lucknow"
+      },
+      {
+        "@type": "City",
+        "name": "Kanpur"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Varanasi"
+      }
+    ]
+  },
+  "provider": {
+    "@type": "MovingCompany",
+    "name": "Uthao Pack Karo"
+  },
+  "description": "Professional local moving services near you including packing, loading, transportation, and unpacking. Available in all UP cities with same-day service options.",
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "3000",
+      "priceCurrency": "INR",
+      "minPrice": "3000",
+      "maxPrice": "25000"
+    }
+  }
+}

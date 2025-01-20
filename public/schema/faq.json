@@ -1,0 +1,29 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How to find packers and movers near me in Lucknow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uthao Pack Karo offers professional packing and moving services near you in Lucknow. We provide free quotes, experienced staff, and 24/7 support. Contact us at +91-8924839930 for immediate assistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the moving charges near me in Lucknow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Local moving charges near you start from ₹3,000 for 1BHK, ₹4,500 for 2BHK, and ₹6,000 for 3BHK homes. Final cost depends on items quantity, floor level, and specific requirements. We offer transparent pricing with no hidden charges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which areas do you serve near me in UP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve all major cities in UP including Lucknow, Kanpur, Noida, Varanasi, Prayagraj, Gorakhpur, and surrounding areas. Our services are available 24/7 with same-day moving options in most locations."
+      }
+    }
+  ]
+}

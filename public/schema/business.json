@@ -1,0 +1,37 @@
+{
+  "@type": "MovingCompany",
+  "name": "Best Packers and Movers Near Me in UP - Uthao Pack Karo",
+  "image": "/og-image.png",
+  "description": "Leading packers and movers near you in Lucknow and Uttar Pradesh. Professional moving, packing, and logistics services at best prices near me. Expert in local home shifting, office relocation, and vehicle transportation near me. 24/7 support available in all major UP cities including Lucknow, Kanpur, Noida, and Varanasi.",
+  "@id": "https://uthaopackkaro.com",
+  "url": "https://uthaopackkaro.com",
+  "telephone": "+91-8924839930",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sec J jankipuram Sulabh Awas C5 apartment, kursi road",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "226021",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 26.927944,
+    "longitude": 80.969944
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
