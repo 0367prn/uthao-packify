@@ -69,10 +69,10 @@ const Footer = () => {
           >
             <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/share/14q4LN6U7A/" className="hover:text-primary transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/uthaopackkaro?igsh=MWh3cXUzaWpuenR4MA==" className="hover:text-primary transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
