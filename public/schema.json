@@ -4,20 +4,20 @@
     {
       "@type": "WebSite",
       "name": "Uthao Pack Karo - Best Packers and Movers Near Me in UP",
-      "url": "https://uthaopackkaro.com",
+      "url": "https://www.uthaopackkaro.com",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://uthaopackkaro.com/search?q={search_term_string}",
+        "target": "https://www.uthaopackkaro.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "MovingCompany",
       "name": "Best Packers and Movers Near Me in UP - Uthao Pack Karo",
-      "image": "/og-image.png",
+      "image": "https://www.uthaopackkaro.com/og-image.png",
       "description": "Leading packers and movers near you in Lucknow and Uttar Pradesh. Professional moving, packing, and logistics services at best prices near me. Expert in local home shifting, office relocation, and vehicle transportation near me. 24/7 support available in all major UP cities including Lucknow, Kanpur, Noida, and Varanasi.",
-      "@id": "https://uthaopackkaro.com",
-      "url": "https://uthaopackkaro.com",
+      "@id": "https://www.uthaopackkaro.com",
+      "url": "https://www.uthaopackkaro.com",
       "telephone": "+91-8924839930",
       "priceRange": "₹₹",
       "address": {

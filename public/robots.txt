@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://uthaopackkaro.com/sitemap.xml
+Sitemap: https://www.uthaopackkaro.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 10
