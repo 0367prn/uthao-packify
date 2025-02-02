@@ -92,7 +92,7 @@
   }
 
   .card-gradient {
-    @apply bg-gradient-to-br from-card to-secondary/80 dark:from-gray-800 dark:to-gray-900/80 backdrop-blur-sm;
+    @apply bg-gradient-to-br from-white to-secondary/10 dark:from-gray-800 dark:to-gray-900/80 backdrop-blur-sm;
   }
 }
 
