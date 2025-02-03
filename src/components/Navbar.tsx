@@ -6,10 +6,12 @@ import { useToast } from "@/hooks/use-toast";
 import ContactDialog from "./ContactDialog";
 import MobileMenu from "./MobileMenu";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [user, setUser] = useState(null);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -20,6 +22,35 @@ const Navbar = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    try {
+      await supabase.auth.signOut();
+      navigate('/');
+      toast({
+        title: "Success",
+        description: "You have been signed out successfully.",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
+  };
 
   const menuItems = [
     { label: "Home", id: "/" },
@@ -100,12 +131,22 @@ const Navbar = () => {
               )}
             </motion.button>
 
-            <Button 
-              onClick={() => navigate('/quote')}
-              className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-            >
-              Get Quote
-            </Button>
+            {user ? (
+              <Button 
+                onClick={handleSignOut}
+                variant="outline"
+                className="font-semibold px-6 py-2 rounded-full transition-all duration-300"
+              >
+                Sign Out
+              </Button>
+            ) : (
+              <Button 
+                onClick={() => navigate('/auth')}
+                className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
+                Sign In
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,10 +172,14 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <MobileMenu 
           isOpen={isOpen}
-          menuItems={menuItems}
+          menuItems={[...menuItems, { label: user ? "Sign Out" : "Sign In", id: user ? "signout" : "/auth" }]}
           socialLinks={socialLinks}
           onMenuItemClick={(path) => {
-            navigate(path);
+            if (path === "signout") {
+              handleSignOut();
+            } else {
+              navigate(path);
+            }
             setIsOpen(false);
           }}
         />
