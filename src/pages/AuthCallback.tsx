@@ -8,17 +8,32 @@ const AuthCallback = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN" && session) {
+    const handleAuthCallback = async () => {
+      const { data: { session }, error } = await supabase.auth.getSession();
+      
+      if (error) {
+        console.error("Auth callback error:", error);
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
+        navigate("/auth");
+        return;
+      }
+
+      if (session) {
         toast({
           title: "Welcome!",
           description: "You have successfully signed in.",
         });
         navigate("/");
-      } else if (event === "SIGNED_OUT") {
+      } else {
         navigate("/auth");
       }
-    });
+    };
+
+    handleAuthCallback();
   }, [navigate, toast]);
 
   return (

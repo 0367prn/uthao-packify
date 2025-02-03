@@ -21,14 +21,27 @@ const Auth = () => {
   const handleSocialLogin = async (provider: Provider) => {
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { data, error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
           redirectTo: `${window.location.origin}/auth/callback`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
         },
       });
+      
       if (error) throw error;
+      
+      if (!data.url) {
+        throw new Error("No redirect URL returned");
+      }
+
+      // Redirect to the authorization URL
+      window.location.href = data.url;
     } catch (error: any) {
+      console.error("Social login error:", error);
       toast({
         title: "Error",
         description: error.message,
@@ -44,29 +57,51 @@ const Auth = () => {
     try {
       setLoading(true);
       if (isLogin) {
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signInWithPassword({
           email,
           password,
         });
+        
         if (error) throw error;
-        navigate("/");
+        
+        if (data.user) {
+          toast({
+            title: "Success",
+            description: "Successfully signed in!",
+          });
+          navigate("/");
+        }
       } else {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
             data: {
               full_name: fullName,
             },
+            emailRedirectTo: `${window.location.origin}/auth/callback`,
           },
         });
+        
         if (error) throw error;
-        toast({
-          title: "Success",
-          description: "Please check your email to verify your account.",
-        });
+        
+        if (data.user) {
+          if (data.session) {
+            toast({
+              title: "Success",
+              description: "Successfully signed up and logged in!",
+            });
+            navigate("/");
+          } else {
+            toast({
+              title: "Success",
+              description: "Please check your email to verify your account.",
+            });
+          }
+        }
       }
     } catch (error: any) {
+      console.error("Email auth error:", error);
       toast({
         title: "Error",
         description: error.message,
@@ -81,15 +116,21 @@ const Auth = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signInWithOtp({
+      const { data, error } = await supabase.auth.signInWithOtp({
         phone,
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
       });
+      
       if (error) throw error;
+      
       toast({
         title: "Success",
         description: "Please check your phone for the OTP.",
       });
     } catch (error: any) {
+      console.error("Phone auth error:", error);
       toast({
         title: "Error",
         description: error.message,
@@ -111,7 +152,6 @@ const Auth = () => {
           {isLogin ? "Welcome Back" : "Create Account"}
         </h2>
 
-        {/* Social Login Buttons */}
         <div className="space-y-3 mb-6">
           <Button
             variant="outline"
@@ -148,39 +188,47 @@ const Auth = () => {
           </div>
         </div>
 
-        {/* Email/Password Form */}
         <form onSubmit={handleEmailAuth} className="space-y-4 mb-6">
           {!isLogin && (
             <div className="space-y-1">
-              <Input
-                type="text"
-                placeholder="Full Name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                required={!isLogin}
-                icon={<User2 className="w-4 h-4" />}
-              />
+              <div className="relative">
+                <User2 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
+                <Input
+                  type="text"
+                  placeholder="Full Name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required={!isLogin}
+                  className="pl-10"
+                />
+              </div>
             </div>
           )}
           <div className="space-y-1">
-            <Input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              icon={<Mail className="w-4 h-4" />}
-            />
+            <div className="relative">
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
+              <Input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="pl-10"
+              />
+            </div>
           </div>
           <div className="space-y-1">
-            <Input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              icon={<Lock className="w-4 h-4" />}
-            />
+            <div className="relative">
+              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
+              <Input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="pl-10"
+              />
+            </div>
           </div>
           <Button type="submit" className="w-full" disabled={loading}>
             {loading ? (
@@ -191,17 +239,19 @@ const Auth = () => {
           </Button>
         </form>
 
-        {/* Phone Auth Form */}
         <form onSubmit={handlePhoneAuth} className="space-y-4 mb-6">
           <div className="space-y-1">
-            <Input
-              type="tel"
-              placeholder="Phone Number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              icon={<Phone className="w-4 h-4" />}
-            />
+            <div className="relative">
+              <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
+              <Input
+                type="tel"
+                placeholder="Phone Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                className="pl-10"
+              />
+            </div>
           </div>
           <Button type="submit" variant="outline" className="w-full" disabled={loading}>
             {loading ? (
