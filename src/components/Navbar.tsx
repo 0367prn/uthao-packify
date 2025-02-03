@@ -1,25 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon, Facebook, Twitter, Instagram, PhoneCall, LogOut } from "lucide-react";
+import { Menu, X, Sun, Moon, Facebook, Twitter, Instagram, PhoneCall } from "lucide-react";
 import { Button } from "./ui/button";
-import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import ContactDialog from "./ContactDialog";
 import MobileMenu from "./MobileMenu";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
-  const [user, setUser] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -30,63 +20,6 @@ const Navbar = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
-
-  useEffect(() => {
-    const getInitialSession = async () => {
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-        setUser(session?.user ?? null);
-        if (session?.user) {
-          const { data: profile } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', session.user.id)
-            .single();
-          if (profile) {
-            setUser({ ...session.user, ...profile });
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching session:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getInitialSession();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (session?.user) {
-        const { data: profile } = await supabase
-          .from('profiles')
-          .select('*')
-          .eq('id', session.user.id)
-          .single();
-        setUser({ ...session.user, ...profile });
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  const handleSignOut = async () => {
-    try {
-      await supabase.auth.signOut();
-      navigate('/');
-      toast({
-        title: "Success",
-        description: "You have been signed out successfully.",
-      });
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-  };
 
   const menuItems = [
     { label: "Home", id: "/" },
@@ -109,14 +42,6 @@ const Navbar = () => {
     { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     { icon: Instagram, href: "https://www.instagram.com/uthaopackkaro?igsh=MWh3cXUzaWpuenR4MA==", label: "Instagram" },
   ];
-
-  const getUserInitials = (user: any) => {
-    if (!user) return "U";
-    if (user.full_name) {
-      return user.full_name.split(' ').map((n: string) => n[0]).join('').toUpperCase();
-    }
-    return user.email?.[0].toUpperCase() || "U";
-  };
 
   return (
     <nav className="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b dark:border-gray-800">
@@ -175,31 +100,12 @@ const Navbar = () => {
               )}
             </motion.button>
 
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                    <Avatar className="h-10 w-10">
-                      <AvatarImage src={user.avatar_url} alt={user.full_name || user.email} />
-                      <AvatarFallback>{getUserInitials(user)}</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={handleSignOut}>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Button 
-                onClick={() => navigate('/auth')}
-                className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-              >
-                Sign In
-              </Button>
-            )}
+            <Button 
+              onClick={() => navigate('/quote')}
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            >
+              Get Quote
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -225,14 +131,10 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <MobileMenu 
           isOpen={isOpen}
-          menuItems={[...menuItems, { label: user ? "Sign Out" : "Sign In", id: user ? "signout" : "/auth" }]}
+          menuItems={menuItems}
           socialLinks={socialLinks}
           onMenuItemClick={(path) => {
-            if (path === "signout") {
-              handleSignOut();
-            } else {
-              navigate(path);
-            }
+            navigate(path);
             setIsOpen(false);
           }}
         />
