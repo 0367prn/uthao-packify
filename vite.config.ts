@@ -31,6 +31,13 @@ export default defineConfig(({ mode }) => ({
             'react-router-dom',
             '@tanstack/react-query',
             'framer-motion'
+          ],
+          ui: [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-slot',
+            'class-variance-authority',
+            'clsx'
           ]
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
