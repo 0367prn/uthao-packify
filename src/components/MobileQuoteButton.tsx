@@ -22,9 +22,9 @@ const MobileQuoteButton = () => {
     }
   ];
 
-  const handleServiceSelect = () => {
+  const handleServiceSelect = (serviceTitle: string) => {
     setIsOpen(false);
-    navigate('/#quote');
+    navigate('/#quote', { state: { selectedService: serviceTitle } });
   };
 
   return (
@@ -53,7 +53,7 @@ const MobileQuoteButton = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="w-full flex items-center gap-4 p-4 rounded-xl bg-accent hover:bg-accent/80 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                onClick={handleServiceSelect}
+                onClick={() => handleServiceSelect(service.title)}
               >
                 <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
                   {service.icon}

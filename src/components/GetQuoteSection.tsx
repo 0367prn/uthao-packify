@@ -3,24 +3,30 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Calendar, Home, MapPin, Package, Phone, User } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const GetQuoteSection = () => {
+  const location = useLocation();
+  const selectedService = location.state?.selectedService || "General Inquiry";
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     from: "",
     to: "",
     date: "",
-    size: "Studio"
+    size: "Studio",
+    service: selectedService
   });
 
   const handleWhatsApp = () => {
-    const message = `Hi, I'm ${formData.name}. I need moving services:\n\n` +
+    const message = `Hi, I'm ${formData.name}. I need ${formData.service} services:\n\n` +
       `📱 Phone: ${formData.phone}\n` +
       `📍 From: ${formData.from}\n` +
       `🎯 To: ${formData.to}\n` +
       `📅 Date: ${formData.date}\n` +
-      `🏠 Home Size: ${formData.size}\n\n` +
+      `🏠 Home Size: ${formData.size}\n` +
+      `🚛 Service Type: ${formData.service}\n\n` +
       `Please provide me with a quote for my move. Thank you!`;
     const whatsappUrl = `https://wa.me/+918924839930?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -62,7 +68,7 @@ const GetQuoteSection = () => {
         >
           <h2 className="text-4xl font-bold mb-4">Get Your Free Quote Today</h2>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto">
-            Fill out the form below and we'll get back to you with a detailed quote for your move.
+            Fill out the form below and we'll get back to you with a detailed quote for your {formData.service.toLowerCase()}.
           </p>
         </motion.div>
 
