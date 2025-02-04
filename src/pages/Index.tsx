@@ -10,6 +10,7 @@ import StatsBoxes from "@/components/StatsBoxes";
 import PartnersSection from "@/components/PartnersSection";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import MobileQuoteButton from "@/components/MobileQuoteButton";
 import { useState } from "react";
 
 const Index = () => {
@@ -31,12 +32,10 @@ const Index = () => {
 
       <ServicesSection />
 
-      {/* Process Section */}
       <section id="process" className="py-20 bg-background">
         <ProcessSection />
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8 dark:text-white">About Us</h2>
@@ -48,14 +47,17 @@ const Index = () => {
 
       <FeedbackSection />
 
-      {/* Quote Section */}
       <section id="quote">
         <GetQuoteSection />
       </section>
 
       <Footer />
 
-      {/* Contact Form Modal */}
+      {/* Mobile Quote Button */}
+      <div className="md:hidden">
+        <MobileQuoteButton />
+      </div>
+
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
           <ContactForm onClose={() => setShowContactForm(false)} />
