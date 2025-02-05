@@ -23,6 +23,9 @@ const PriceCalculator = ({ vehicle, isOpen, onClose, onBook }: PriceCalculatorPr
     loading: false,
     unloading: false,
     packing: false,
+    unpacking: false,
+    furniture: false,
+    appliances: false,
   });
   const { toast } = useToast();
 
@@ -45,7 +48,10 @@ const PriceCalculator = ({ vehicle, isOpen, onClose, onBook }: PriceCalculatorPr
     // Add costs for additional services
     if (additionalServices.loading) totalPrice += 500;
     if (additionalServices.unloading) totalPrice += 500;
-    if (additionalServices.packing) totalPrice += 1000;
+    if (additionalServices.packing) totalPrice += 1500;
+    if (additionalServices.unpacking) totalPrice += 1000;
+    if (additionalServices.furniture) totalPrice += 2000;
+    if (additionalServices.appliances) totalPrice += 1500;
 
     toast({
       title: "Estimated Price",
@@ -74,7 +80,7 @@ const PriceCalculator = ({ vehicle, isOpen, onClose, onBook }: PriceCalculatorPr
           
           <div className="space-y-2">
             <label className="text-sm font-medium">Additional Services</label>
-            <div className="space-y-2">
+            <div className="grid grid-cols-2 gap-2">
               <label className="flex items-center space-x-2">
                 <input
                   type="checkbox"
@@ -106,7 +112,40 @@ const PriceCalculator = ({ vehicle, isOpen, onClose, onBook }: PriceCalculatorPr
                     packing: e.target.checked
                   }))}
                 />
-                <span className="text-sm">Packing (₹1000)</span>
+                <span className="text-sm">Packing (₹1500)</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={additionalServices.unpacking}
+                  onChange={(e) => setAdditionalServices(prev => ({
+                    ...prev,
+                    unpacking: e.target.checked
+                  }))}
+                />
+                <span className="text-sm">Unpacking (₹1000)</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={additionalServices.furniture}
+                  onChange={(e) => setAdditionalServices(prev => ({
+                    ...prev,
+                    furniture: e.target.checked
+                  }))}
+                />
+                <span className="text-sm">Furniture Assembly (₹2000)</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={additionalServices.appliances}
+                  onChange={(e) => setAdditionalServices(prev => ({
+                    ...prev,
+                    appliances: e.target.checked
+                  }))}
+                />
+                <span className="text-sm">Appliance Installation (₹1500)</span>
               </label>
             </div>
           </div>

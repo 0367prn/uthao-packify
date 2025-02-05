@@ -16,7 +16,7 @@ const Fleet = () => {
     {
       type: "Container Trucks",
       capacity: "20ft & 40ft",
-      features: ["GPS Tracking", "Temperature Control", "24/7 Support"],
+      features: ["GPS Tracking", "Temperature Control", "24/7 Support", "Real-time Tracking", "Insurance Coverage"],
       specifications: {
         length: "40 feet",
         width: "8 feet",
@@ -36,7 +36,7 @@ const Fleet = () => {
     {
       type: "Closed Body Trucks",
       capacity: "14ft - 19ft",
-      features: ["Waterproof", "Security Locks", "Loading Ramp"],
+      features: ["Waterproof", "Security Locks", "Loading Ramp", "24/7 Support", "Insurance Coverage"],
       specifications: {
         length: "19 feet",
         width: "7.5 feet",
@@ -54,23 +54,23 @@ const Fleet = () => {
       image: "/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png"
     },
     {
-      type: "Mini Trucks",
-      capacity: "8ft - 12ft",
-      features: ["City Friendly", "Quick Service", "Cost Effective"],
+      type: "Packers & Movers",
+      capacity: "All sizes",
+      features: ["Professional Packing", "Safe Handling", "Door-to-Door Service", "Insurance Coverage", "Expert Team"],
       specifications: {
-        length: "12 feet",
-        width: "6.5 feet",
-        height: "6 feet",
-        maxLoad: "8,000 kg"
+        length: "Customizable",
+        width: "Customizable",
+        height: "Customizable",
+        maxLoad: "As needed"
       },
       pricing: {
-        baseRate: "₹2000",
-        perKm: "₹30"
+        baseRate: "₹4000",
+        perKm: "₹45"
       },
-      availability: "5 Units Available",
-      serviceAreas: ["Mumbai Local", "Thane Local"],
+      availability: "Available Now",
+      serviceAreas: ["Mumbai", "Pune", "Nashik", "Thane"],
       rating: 4.7,
-      reviews: 312,
+      reviews: 178,
       image: "/lovable-uploads/28d6b83b-ca33-489a-bfaf-b1df54e75324.png"
     }
   ];
@@ -127,7 +127,7 @@ const Fleet = () => {
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {vehicles.map((vehicle) => (
               <VehicleCard
