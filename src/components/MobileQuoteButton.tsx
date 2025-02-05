@@ -24,7 +24,10 @@ const MobileQuoteButton = () => {
 
   const handleServiceSelect = (serviceTitle: string) => {
     setIsOpen(false);
-    navigate('/#quote', { state: { selectedService: serviceTitle } });
+    // Using window.location to ensure proper scroll and state handling
+    window.location.href = '/#quote';
+    // Set the selected service in localStorage to persist through navigation
+    localStorage.setItem('selectedService', serviceTitle);
   };
 
   return (
@@ -32,7 +35,7 @@ const MobileQuoteButton = () => {
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button 
-            className="fixed bottom-4 left-4 right-4 z-50 bg-primary hover:bg-primary-hover text-white rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl animate-bounce"
+            className="fixed bottom-4 left-4 right-4 z-50 bg-primary hover:bg-primary-hover text-white rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl animate-[bounce_2s_ease-in-out_infinite]"
             size="lg"
           >
             Get Quote in Minutes

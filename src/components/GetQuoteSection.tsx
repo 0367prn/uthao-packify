@@ -2,12 +2,18 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Calendar, Home, MapPin, Package, Phone, User } from "lucide-react";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const GetQuoteSection = () => {
-  const location = useLocation();
-  const selectedService = location.state?.selectedService || "General Inquiry";
+  const [selectedService, setSelectedService] = useState("General Inquiry");
+
+  useEffect(() => {
+    const storedService = localStorage.getItem('selectedService');
+    if (storedService) {
+      setSelectedService(storedService);
+      localStorage.removeItem('selectedService'); // Clear after using
+    }
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -18,6 +24,11 @@ const GetQuoteSection = () => {
     size: "Studio",
     service: selectedService
   });
+
+  // Update formData.service when selectedService changes
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, service: selectedService }));
+  }, [selectedService]);
 
   const handleWhatsApp = () => {
     const message = `Hi, I'm ${formData.name}. I need ${formData.service} services:\n\n` +
