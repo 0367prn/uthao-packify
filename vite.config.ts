@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: mode === 'development',
+    sourcemap: false, // Disable sourcemaps in production
     minify: "esbuild",
     target: 'esnext',
     cssMinify: true,
@@ -28,10 +28,10 @@ export default defineConfig(({ mode }) => ({
           vendor: [
             'react',
             'react-dom',
-            'react-router-dom',
-            '@tanstack/react-query',
-            'framer-motion'
           ],
+          routing: ['react-router-dom'],
+          query: ['@tanstack/react-query'],
+          motion: ['framer-motion'],
           ui: [
             '@radix-ui/react-dialog',
             '@radix-ui/react-dropdown-menu',
