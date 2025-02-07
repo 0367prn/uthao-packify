@@ -22,10 +22,10 @@ const Navbar = () => {
   }, [isDark]);
 
   const menuItems = [
-    { label: "Home", path: "/" },
-    { label: "Services", path: "/services" },
-    { label: "Fleet", path: "/fleet" },
-    { label: "Certifications", path: "/certifications" }
+    { label: "Home", id: "/" },
+    { label: "Services", id: "/services" },
+    { label: "Fleet", id: "/fleet" },
+    { label: "Process", id: "/process" }
   ];
 
   const handlePhoneCall = (phoneNumber: string) => {
@@ -61,7 +61,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <motion.button
                 key={item.label}
-                onClick={() => navigate(item.path)}
+                onClick={() => navigate(item.id)}
                 whileHover={{ scale: 1.05 }}
                 className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
               >
