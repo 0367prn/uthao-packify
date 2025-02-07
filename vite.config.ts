@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: false, // Disable sourcemaps in production
+    sourcemap: mode === 'development',
     minify: "esbuild",
     target: 'esnext',
     cssMinify: true,
@@ -28,16 +28,9 @@ export default defineConfig(({ mode }) => ({
           vendor: [
             'react',
             'react-dom',
-          ],
-          routing: ['react-router-dom'],
-          query: ['@tanstack/react-query'],
-          motion: ['framer-motion'],
-          ui: [
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-slot',
-            'class-variance-authority',
-            'clsx'
+            'react-router-dom',
+            '@tanstack/react-query',
+            'framer-motion'
           ]
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',

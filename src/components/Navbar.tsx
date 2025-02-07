@@ -5,13 +5,11 @@ import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import ContactDialog from "./ContactDialog";
 import MobileMenu from "./MobileMenu";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const { toast } = useToast();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (isDark) {
@@ -21,16 +19,30 @@ const Navbar = () => {
     }
   }, [isDark]);
 
-  const menuItems = [
-    { label: "Home", id: "/" },
-    { label: "Services", id: "/services" },
-    { label: "Fleet", id: "/fleet" },
-    { label: "Process", id: "/process" }
-  ];
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    } else {
+      toast({
+        title: "Section not found",
+        description: "We couldn't find that section. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
 
   const handlePhoneCall = (phoneNumber: string) => {
     window.location.href = `tel:${phoneNumber}`;
   };
+
+  const menuItems = [
+    { label: "Home", id: "home" },
+    { label: "Services", id: "services" },
+    { label: "Process", id: "process" },
+    { label: "About", id: "about" }
+  ];
 
   const phoneNumbers = [
     { number: "8090002299", label: "Main Office" },
@@ -50,8 +62,7 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-primary dark:text-white cursor-pointer"
-            onClick={() => navigate('/')}
+            className="text-2xl font-bold text-primary dark:text-white"
           >
             Uthao Pack Karo
           </motion.div>
@@ -61,7 +72,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <motion.button
                 key={item.label}
-                onClick={() => navigate(item.id)}
+                onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.05 }}
                 className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
               >
@@ -99,6 +110,13 @@ const Navbar = () => {
                 <Moon className="h-5 w-5 text-gray-600" />
               )}
             </motion.button>
+
+            <Button 
+              onClick={() => scrollToSection('quote')}
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            >
+              Get Quote
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -126,10 +144,7 @@ const Navbar = () => {
           isOpen={isOpen}
           menuItems={menuItems}
           socialLinks={socialLinks}
-          onMenuItemClick={(path) => {
-            navigate(path);
-            setIsOpen(false);
-          }}
+          onMenuItemClick={scrollToSection}
         />
       </div>
     </nav>
