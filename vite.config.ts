@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -14,16 +13,12 @@ export default defineConfig(({ mode }) => ({
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'SAMEORIGIN',
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
-    },
-    middlewareMode: false,
-    fs: {
-      strict: true,
     }
   },
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: mode === 'development',
+    sourcemap: false, // Disable sourcemaps in production
     minify: "esbuild",
     target: 'esnext',
     cssMinify: true,
@@ -33,9 +28,16 @@ export default defineConfig(({ mode }) => ({
           vendor: [
             'react',
             'react-dom',
-            'react-router-dom',
-            '@tanstack/react-query',
-            'framer-motion'
+          ],
+          routing: ['react-router-dom'],
+          query: ['@tanstack/react-query'],
+          motion: ['framer-motion'],
+          ui: [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-slot',
+            'class-variance-authority',
+            'clsx'
           ]
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',

@@ -1,77 +1,155 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Truck, Package, ShieldCheck } from "lucide-react";
+import VehicleCard from "@/components/fleet/VehicleCard";
+import PriceCalculator from "@/components/fleet/PriceCalculator";
+import { Vehicle } from "@/types/fleet";
+import { useNavigate } from "react-router-dom";
 
 const Fleet = () => {
-  const vehicles = [
+  const navigate = useNavigate();
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+
+  const vehicles: Vehicle[] = [
     {
       type: "Container Trucks",
       capacity: "20ft & 40ft",
-      features: ["GPS Tracking", "Temperature Control", "24/7 Support"],
+      features: ["GPS Tracking", "Temperature Control", "24/7 Support", "Real-time Tracking", "Insurance Coverage"],
+      specifications: {
+        length: "40 feet",
+        width: "8 feet",
+        height: "8.5 feet",
+        maxLoad: "26,000 kg"
+      },
+      pricing: {
+        baseRate: "₹5000",
+        perKm: "₹50"
+      },
+      availability: "Available Now",
+      serviceAreas: ["Mumbai", "Pune", "Nashik"],
+      rating: 4.8,
+      reviews: 156,
       image: "/lovable-uploads/58dfb9a3-a70c-410d-a1d7-afec9a3b1adb.png"
     },
     {
       type: "Closed Body Trucks",
       capacity: "14ft - 19ft",
-      features: ["Waterproof", "Security Locks", "Loading Ramp"],
+      features: ["Waterproof", "Security Locks", "Loading Ramp", "24/7 Support", "Insurance Coverage"],
+      specifications: {
+        length: "19 feet",
+        width: "7.5 feet",
+        height: "7 feet",
+        maxLoad: "15,000 kg"
+      },
+      pricing: {
+        baseRate: "₹3500",
+        perKm: "₹40"
+      },
+      availability: "2 Units Available",
+      serviceAreas: ["Mumbai", "Thane", "Navi Mumbai"],
+      rating: 4.9,
+      reviews: 203,
       image: "/lovable-uploads/204deac8-5ad8-4a7f-a014-f8d461ed1cb7.png"
     },
     {
-      type: "Mini Trucks",
-      capacity: "8ft - 12ft",
-      features: ["City Friendly", "Quick Service", "Cost Effective"],
+      type: "Packers & Movers",
+      capacity: "All sizes",
+      features: ["Professional Packing", "Safe Handling", "Door-to-Door Service", "Insurance Coverage", "Expert Team"],
+      specifications: {
+        length: "Customizable",
+        width: "Customizable",
+        height: "Customizable",
+        maxLoad: "As needed"
+      },
+      pricing: {
+        baseRate: "₹4000",
+        perKm: "₹45"
+      },
+      availability: "Available Now",
+      serviceAreas: ["Mumbai", "Pune", "Nashik", "Thane"],
+      rating: 4.7,
+      reviews: 178,
       image: "/lovable-uploads/28d6b83b-ca33-489a-bfaf-b1df54e75324.png"
     }
   ];
 
+  const handleCalculate = (vehicle: Vehicle) => {
+    setSelectedVehicle(vehicle);
+    setIsCalculatorOpen(true);
+  };
+
+  const handleBook = (vehicle: Vehicle) => {
+    localStorage.setItem('selectedService', `${vehicle.type} Booking`);
+    navigate('/#quote');
+  };
+
+  const handleCalculatorClose = () => {
+    setIsCalculatorOpen(false);
+    setSelectedVehicle(null);
+  };
+
+  const handleCalculatorBook = (distance: number) => {
+    if (selectedVehicle) {
+      localStorage.setItem('selectedService', `${selectedVehicle.type} Booking (${distance}km)`);
+      navigate('/#quote');
+    }
+  };
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-background to-accent/20">
       <Navbar />
-      <section className="pt-24 pb-16">
+      <section className="pt-20 pb-12">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
-            <h1 className="text-4xl font-bold mb-4">Our Fleet</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Modern and well-maintained vehicles for all your moving needs
+            <h1 className="text-3xl md:text-4xl font-bold mb-3">Our Premium Fleet</h1>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
+              Modern and well-maintained vehicles equipped with advanced features for all your transportation needs
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vehicles.map((vehicle, index) => (
-              <motion.div
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          >
+            {vehicles.map((vehicle) => (
+              <VehicleCard
                 key={vehicle.type}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg"
-              >
-                <img
-                  src={vehicle.image}
-                  alt={vehicle.type}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{vehicle.type}</h3>
-                  <p className="text-primary mb-4">Capacity: {vehicle.capacity}</p>
-                  <ul className="space-y-2">
-                    {vehicle.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-gray-600">
-                        <ShieldCheck className="w-4 h-4 mr-2 text-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
+                vehicle={vehicle}
+                onCalculate={handleCalculate}
+                onBook={handleBook}
+              />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
+
+      {selectedVehicle && (
+        <PriceCalculator
+          vehicle={selectedVehicle}
+          isOpen={isCalculatorOpen}
+          onClose={handleCalculatorClose}
+          onBook={handleCalculatorBook}
+        />
+      )}
+
       <Footer />
     </div>
   );
