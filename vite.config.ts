@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -13,7 +14,18 @@ export default defineConfig(({ mode }) => ({
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'SAMEORIGIN',
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
-    }
+    },
+    historyApiFallback: true
+  },
+  preview: {
+    port: 8080,
+    strictPort: true,
+    headers: {
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'SAMEORIGIN',
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+    },
+    historyApiFallback: true
   },
   build: {
     outDir: "dist",
@@ -31,6 +43,13 @@ export default defineConfig(({ mode }) => ({
             'react-router-dom',
             '@tanstack/react-query',
             'framer-motion'
+          ],
+          ui: [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-slot',
+            'class-variance-authority',
+            'clsx'
           ]
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -54,14 +73,5 @@ export default defineConfig(({ mode }) => ({
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'framer-motion'],
     exclude: ['lovable-tagger']
-  },
-  preview: {
-    port: 8080,
-    strictPort: true,
-    headers: {
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'SAMEORIGIN',
-      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
-    }
   }
 }));

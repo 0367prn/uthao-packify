@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, StarHalf, Award, Shield, Building2, ThumbsUp, UserCheck, Users } from "lucide-react";
+import { Star, StarHalf, Award, Shield, Building2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Carousel,
@@ -8,12 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 
@@ -24,19 +18,8 @@ const testimonials = [
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     content: "The best moving service I've ever used! Professional, efficient, and careful with all my belongings. 🌟",
     rating: 4.5,
-    serviceRatings: {
-      punctuality: 5,
-      professionalism: 4.5,
-      carefulness: 4.5,
-      communication: 4
-    },
     verifiedMove: "Gomti Nagar to Hazratganj",
-    date: "2024-02-15",
-    moveDetails: {
-      distance: "12 km",
-      items: "3 BHK",
-      duration: "6 hours"
-    }
+    date: "2024-02-15"
   },
   {
     name: "Prince Kumar",
@@ -44,19 +27,8 @@ const testimonials = [
     image: null,
     content: "Excellent service for our office relocation. Team was organized and completed ahead of schedule! 🏢✨",
     rating: 5,
-    serviceRatings: {
-      punctuality: 5,
-      professionalism: 5,
-      carefulness: 5,
-      communication: 5
-    },
     verifiedMove: "Indira Nagar to Aliganj",
-    date: "2024-02-10",
-    moveDetails: {
-      distance: "10 km",
-      items: "2 BHK",
-      duration: "5 hours"
-    }
+    date: "2024-02-10"
   },
   {
     name: "Ramraj",
@@ -64,19 +36,8 @@ const testimonials = [
     image: null,
     content: "Very impressed with their packing service. Made my interstate move completely stress-free! 📦",
     rating: 4,
-    serviceRatings: {
-      punctuality: 4,
-      professionalism: 4,
-      carefulness: 4,
-      communication: 4
-    },
     verifiedMove: "Aliganj to Kanpur",
-    date: "2024-01-20",
-    moveDetails: {
-      distance: "15 km",
-      items: "4 BHK",
-      duration: "7 hours"
-    }
+    date: "2024-01-20"
   },
   {
     name: "Priya Sharma",
@@ -84,19 +45,8 @@ const testimonials = [
     image: null,
     content: "Fantastic experience! They handled all our delicate restaurant equipment with utmost care. 🍽️ Highly recommended! ⭐",
     rating: 5,
-    serviceRatings: {
-      punctuality: 5,
-      professionalism: 5,
-      carefulness: 5,
-      communication: 5
-    },
     verifiedMove: "Hazratganj to Mahanagar",
-    date: "2024-01-15",
-    moveDetails: {
-      distance: "18 km",
-      items: "5 BHK",
-      duration: "8 hours"
-    }
+    date: "2024-01-15"
   },
   {
     name: "Rahul Mehta",
@@ -104,19 +54,8 @@ const testimonials = [
     image: null,
     content: "Seamless relocation of my home office setup. Everything arrived in perfect condition! 💻 Great job! 👍",
     rating: 4.5,
-    serviceRatings: {
-      punctuality: 4.5,
-      professionalism: 4.5,
-      carefulness: 4.5,
-      communication: 4.5
-    },
     verifiedMove: "Mahanagar to Gomti Nagar",
-    date: "2024-01-10",
-    moveDetails: {
-      distance: "12 km",
-      items: "3 BHK",
-      duration: "6 hours"
-    }
+    date: "2024-01-10"
   },
   {
     name: "Anita Patel",
@@ -124,19 +63,8 @@ const testimonials = [
     image: null,
     content: "Helped us move our entire library during summer break. Extremely organized and professional! 📚 Amazing service! ✨",
     rating: 5,
-    serviceRatings: {
-      punctuality: 5,
-      professionalism: 5,
-      carefulness: 5,
-      communication: 5
-    },
     verifiedMove: "Indira Nagar to Varanasi",
-    date: "2024-01-05",
-    moveDetails: {
-      distance: "10 km",
-      items: "2 BHK",
-      duration: "5 hours"
-    }
+    date: "2024-01-05"
   },
   {
     name: "Karan Singh",
@@ -144,19 +72,8 @@ const testimonials = [
     image: null,
     content: "Relocated all our heavy gym equipment without any issues. Punctual and professional team! 💪 Outstanding work! 🎯",
     rating: 4.5,
-    serviceRatings: {
-      punctuality: 4.5,
-      professionalism: 4.5,
-      carefulness: 4.5,
-      communication: 4.5
-    },
     verifiedMove: "Gomti Nagar to Kanpur",
-    date: "2023-12-30",
-    moveDetails: {
-      distance: "15 km",
-      items: "4 BHK",
-      duration: "7 hours"
-    }
+    date: "2023-12-30"
   },
   {
     name: "Maya Reddy",
@@ -164,19 +81,8 @@ const testimonials = [
     image: null,
     content: "They took special care of my artwork during the move. Couldn't be happier with the service! 🎨 Thank you! 🙏",
     rating: 5,
-    serviceRatings: {
-      punctuality: 5,
-      professionalism: 5,
-      carefulness: 5,
-      communication: 5
-    },
     verifiedMove: "Mahanagar to Lucknow",
-    date: "2023-12-25",
-    moveDetails: {
-      distance: "18 km",
-      items: "5 BHK",
-      duration: "8 hours"
-    }
+    date: "2023-12-25"
   }
 ];
 
@@ -184,43 +90,33 @@ const companyStats = [
   {
     icon: Award,
     stat: "4.8/5",
-    label: "Overall Rating",
-    subtext: "Based on 350+ Reviews",
-    tooltip: "Average rating across all services"
-  },
-  {
-    icon: Users,
-    stat: "1500+",
-    label: "Happy Customers",
-    subtext: "And Growing",
-    tooltip: "Total number of satisfied customers"
+    label: "Average Rating",
+    subtext: "Based on 350+ Reviews"
   },
   {
     icon: Shield,
     stat: "100%",
     label: "Insured Moves",
-    subtext: "Full Coverage",
-    tooltip: "All moves are fully insured"
+    subtext: "Full Coverage"
   },
   {
     icon: Building2,
     stat: "5+",
     label: "Years Experience",
-    subtext: "Est. 2019",
-    tooltip: "Years of professional service"
+    subtext: "Est. 2019"
   }
 ];
 
-const serviceQualityMetrics = [
-  { label: "Punctuality", value: 98 },
-  { label: "Care in Handling", value: 96 },
-  { label: "Communication", value: 95 },
-  { label: "Professionalism", value: 97 }
+const certifications = [
+  "ISO 9001:2015 Certified",
+  "IBA Approved",
+  "GST: 09AALCS0939N1Z2",
+  "MSME Registered"
 ];
 
 const FeedbackSection = () => {
   const plugin = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
   const getInitials = (name: string) => {
@@ -259,7 +155,7 @@ const FeedbackSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-accent/20 to-background">
+    <section className="py-20 bg-accent/20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -267,78 +163,44 @@ const FeedbackSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Customer Trust & Recognition</h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Join our community of 1500+ satisfied customers who trust us for their moving needs.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Join our community of 350+ satisfied customers who trust Uthao Pack Karo for their moving needs.
           </p>
         </motion.div>
 
         {/* Company Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {companyStats.map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="glass p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300"
+              className="bg-white p-6 rounded-xl shadow-lg text-center"
             >
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <div className="flex flex-col items-center">
-                      <stat.icon className="h-12 w-12 mb-4 text-primary" />
-                      <h3 className="text-3xl font-bold text-primary mb-2">{stat.stat}</h3>
-                      <p className="font-semibold text-gray-700 dark:text-gray-200">{stat.label}</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{stat.subtext}</p>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{stat.tooltip}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <stat.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
+              <h3 className="text-3xl font-bold text-primary mb-2">{stat.stat}</h3>
+              <p className="font-semibold text-gray-700">{stat.label}</p>
+              <p className="text-sm text-gray-500">{stat.subtext}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Service Quality Metrics */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-center mb-8">Service Quality Metrics</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {serviceQualityMetrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="glass p-6 rounded-xl"
-              >
-                <div className="relative pt-1">
-                  <div className="flex mb-2 items-center justify-between">
-                    <div>
-                      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-primary bg-primary/10">
-                        {metric.label}
-                      </span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-xs font-semibold inline-block text-primary">
-                        {metric.value}%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-primary/10">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${metric.value}%` }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-primary"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* Certifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="flex flex-wrap justify-center gap-4 mb-16"
+        >
+          {certifications.map((cert, index) => (
+            <span
+              key={index}
+              className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium"
+            >
+              {cert}
+            </span>
+          ))}
+        </motion.div>
 
         {/* Testimonials Carousel */}
         <Carousel
@@ -351,16 +213,16 @@ const FeedbackSection = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/3">
                 <motion.div
                   whileHover={{ 
-                    scale: 1.02,
+                    scale: 1.05,
                     boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className="glass p-6 rounded-xl h-full flex flex-col"
+                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg h-full"
                 >
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
                       {testimonial.image ? (
                         <AvatarImage src={testimonial.image} alt={testimonial.name} />
@@ -374,47 +236,17 @@ const FeedbackSection = () => {
                       <h4 className="font-semibold text-lg">{testimonial.name}</h4>
                       <p className="text-gray-500 dark:text-gray-400 text-sm">{testimonial.role}</p>
                     </div>
-                    <UserCheck className="h-5 w-5 text-green-500 ml-auto" />
                   </div>
-                  
-                  <div className="flex mb-3">
+                  <div className="flex mb-4 items-center gap-1">
                     {renderStars(testimonial.rating)}
                     <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">
                       ({testimonial.rating}/5)
                     </span>
                   </div>
-
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{testimonial.content}</p>
-
-                  {testimonial.serviceRatings && (
-                    <div className="mb-4 grid grid-cols-2 gap-2 text-sm">
-                      {Object.entries(testimonial.serviceRatings).map(([key, value]) => (
-                        <div key={key} className="flex items-center gap-1">
-                          <span className="capitalize text-gray-600 dark:text-gray-400">{key}:</span>
-                          <div className="flex">
-                            {renderStars(value)}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="text-sm text-gray-500 dark:text-gray-400 border-t pt-4">
-                    <p className="flex items-center gap-2">
-                      <Shield className="h-4 w-4" />
-                      Verified Move: {testimonial.verifiedMove}
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <ThumbsUp className="h-4 w-4" />
-                      {new Date(testimonial.date).toLocaleDateString()}
-                    </p>
-                    {testimonial.moveDetails && (
-                      <div className="mt-2 grid grid-cols-3 gap-2 text-xs">
-                        <span>🚛 {testimonial.moveDetails.distance}</span>
-                        <span>🏠 {testimonial.moveDetails.items}</span>
-                        <span>⏱️ {testimonial.moveDetails.duration}</span>
-                      </div>
-                    )}
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{testimonial.content}</p>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <p>✓ Verified Move: {testimonial.verifiedMove}</p>
+                    <p>📅 {new Date(testimonial.date).toLocaleDateString()}</p>
                   </div>
                 </motion.div>
               </CarouselItem>
