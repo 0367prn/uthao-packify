@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FeedbackSection from "@/components/FeedbackSection";
 import GetQuoteSection from "@/components/GetQuoteSection";
 import ProcessSection from "@/components/ProcessSection";
 import ContactForm from "@/components/ContactForm";
@@ -44,12 +45,15 @@ const Index = () => {
         </div>
       </section>
 
+      <FeedbackSection />
+
       <section id="quote">
         <GetQuoteSection />
       </section>
 
       <Footer />
 
+      {/* Mobile Quote Button */}
       <div className="md:hidden">
         <MobileQuoteButton />
       </div>
