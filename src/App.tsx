@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Index from "./pages/Index";
+import Services from "./pages/Services";
+import Certifications from "./pages/Certifications";
+import Fleet from "./pages/Fleet";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +21,9 @@ const App = () => (
         </Helmet>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/certifications" element={<Certifications />} />
+          <Route path="/fleet" element={<Fleet />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Toaster />
