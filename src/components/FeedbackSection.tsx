@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Star, StarHalf, Award, Shield, Building2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

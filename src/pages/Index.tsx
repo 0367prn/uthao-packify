@@ -10,6 +10,7 @@ import StatsBoxes from "@/components/StatsBoxes";
 import PartnersSection from "@/components/PartnersSection";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import FeedbackSection from "@/components/FeedbackSection";
 import MobileQuoteButton from "@/components/MobileQuoteButton";
 import { useState } from "react";
 
@@ -41,6 +42,8 @@ const Index = () => {
         <section id="process" className="py-20 bg-background">
           <ProcessSection />
         </section>
+
+        <FeedbackSection />
 
         <section id="about" className="py-20 bg-background">
           <div className="container mx-auto px-4 text-center">
