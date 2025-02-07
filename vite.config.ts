@@ -14,6 +14,10 @@ export default defineConfig(({ mode }) => ({
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'SAMEORIGIN',
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+    },
+    middlewareMode: false,
+    fs: {
+      strict: true,
     }
   },
   build: {
@@ -63,7 +67,6 @@ export default defineConfig(({ mode }) => ({
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'SAMEORIGIN',
       'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
-    },
-    historyApiFallback: true // Add this line to handle client-side routing
+    }
   }
 }));
