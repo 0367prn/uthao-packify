@@ -99,6 +99,13 @@ const Navbar = () => {
                 <Moon className="h-5 w-5 text-gray-600" />
               )}
             </motion.button>
+
+            <Button 
+              onClick={() => navigate('/quote')}
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            >
+              Get Quote
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}

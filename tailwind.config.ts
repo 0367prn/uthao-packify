@@ -42,10 +42,6 @@ export default {
           DEFAULT: "#F8F9FA",
           foreground: "#6B7280",
         },
-        card: {
-          DEFAULT: "#FFFFFF",
-          dark: "#1A1A1A"
-        }
       },
       keyframes: {
         "fade-up": {

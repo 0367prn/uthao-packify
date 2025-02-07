@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { lazy, Suspense } from "react";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -19,8 +18,9 @@ const HeroSection = () => {
   };
 
   const handleMapClick = () => {
-    const latitude = 26.927944;
-    const longitude = 80.969944;
+    // Convert DMS coordinates to decimal degrees
+    const latitude = 26.927944;  // 26°55'40.6"N
+    const longitude = 80.969944; // 80°58'11.8"E
     const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
     window.open(mapUrl, '_blank', 'noopener,noreferrer');
   };
@@ -32,10 +32,6 @@ const HeroSection = () => {
           src="/lovable-uploads/268e1309-dfdd-42bd-a330-c757a6dc1009.png"
           alt="Background Illustration"
           className="absolute right-0 bottom-0 w-1/3 opacity-20 transform translate-x-1/6 translate-y-1/6"
-          loading="lazy"
-          width={400}
-          height={400}
-          decoding="async"
         />
       </div>
 
@@ -50,7 +46,7 @@ const HeroSection = () => {
           className="text-center max-w-4xl mx-auto mb-12"
         >
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -68,7 +64,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -80,12 +76,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex justify-center"
+            className="w-full flex justify-center"
           >
             <Button 
               onClick={scrollToQuote}
               size="lg"
-              className="bg-primary hover:bg-primary-hover text-white text-base md:text-lg px-6 md:px-8 py-2 md:py-6 rounded-full transform transition-transform hover:scale-105"
+              className="bg-primary hover:bg-primary-hover text-white text-sm md:text-lg px-4 md:px-8 py-2 md:py-6 rounded-full w-[200px] md:w-auto cursor-pointer"
             >
               Get Started Now
             </Button>
@@ -102,11 +98,6 @@ const HeroSection = () => {
             src="/lovable-uploads/58dfb9a3-a70c-410d-a1d7-afec9a3b1adb.png" 
             alt="Professional Movers with Couch" 
             className="w-full h-auto object-contain rounded-lg shadow-xl"
-            loading="lazy"
-            width={800}
-            height={600}
-            decoding="async"
-            fetchPriority="high"
           />
         </motion.div>
       </div>
@@ -120,6 +111,14 @@ const HeroSection = () => {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            y: {
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
           className="cursor-pointer"
           onClick={handleMapClick}
         >
