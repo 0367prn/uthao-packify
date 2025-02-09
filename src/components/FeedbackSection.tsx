@@ -1,6 +1,5 @@
-
 import { motion } from "framer-motion";
-import { Star, StarHalf, Award, Shield, Building2 } from "lucide-react";
+import { Star, StarHalf } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Carousel,
@@ -87,37 +86,9 @@ const testimonials = [
   }
 ];
 
-const companyStats = [
-  {
-    icon: Award,
-    stat: "4.8/5",
-    label: "Average Rating",
-    subtext: "Based on 350+ Reviews"
-  },
-  {
-    icon: Shield,
-    stat: "100%",
-    label: "Insured Moves",
-    subtext: "Full Coverage"
-  },
-  {
-    icon: Building2,
-    stat: "5+",
-    label: "Years Experience",
-    subtext: "Est. 2019"
-  }
-];
-
-const certifications = [
-  "ISO 9001:2015 Certified",
-  "IBA Approved",
-  "GST: 09AALCS0939N1Z2",
-  "MSME Registered"
-];
-
 const FeedbackSection = () => {
   const plugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
   const getInitials = (name: string) => {
@@ -163,44 +134,10 @@ const FeedbackSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Customer Trust & Recognition</h2>
+          <h2 className="text-4xl font-bold mb-4">Customer Testimonials</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Join our community of 350+ satisfied customers who trust Uthao Pack Karo for their moving needs.
+            Join our community of satisfied customers who trust Uthao Pack Karo for their moving needs.
           </p>
-        </motion.div>
-
-        {/* Company Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {companyStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white p-6 rounded-xl shadow-lg text-center"
-            >
-              <stat.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="text-3xl font-bold text-primary mb-2">{stat.stat}</h3>
-              <p className="font-semibold text-gray-700">{stat.label}</p>
-              <p className="text-sm text-gray-500">{stat.subtext}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="flex flex-wrap justify-center gap-4 mb-16"
-        >
-          {certifications.map((cert, index) => (
-            <span
-              key={index}
-              className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium"
-            >
-              {cert}
-            </span>
-          ))}
         </motion.div>
 
         {/* Testimonials Carousel */}
