@@ -8,7 +8,6 @@ import { Helmet } from "react-helmet";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Certifications from "./pages/Certifications";
-import Fleet from "./pages/Fleet";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,12 +25,14 @@ const App = () => (
         <Helmet>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
+          <meta name="description" content="Professional moving and packing services" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         </Helmet>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
           <Route path="/certifications" element={<Certifications />} />
-          <Route path="/fleet" element={<Fleet />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Toaster />

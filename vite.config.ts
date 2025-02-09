@@ -36,30 +36,36 @@ export default defineConfig(({ mode }) => ({
     cssMinify: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: [
-            'react',
-            'react-dom',
-            'react-router-dom',
-            '@tanstack/react-query',
-            'framer-motion'
-          ],
-          ui: [
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-slot',
-            'class-variance-authority',
-            'clsx'
-          ]
+        manualChunks: (id) => {
+          // Create separate chunks for major dependencies
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor-react';
+            if (id.includes('@radix-ui')) return 'vendor-radix';
+            if (id.includes('framer-motion')) return 'vendor-framer';
+            if (id.includes('lucide-react')) return 'vendor-lucide';
+            return 'vendor'; // other dependencies
+          }
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
+        assetFileNames: ({name}) => {
+          if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
+            return 'assets/images/[name]-[hash][extname]';
+          }
+          if (/\.css$/.test(name ?? '')) {
+            return 'assets/css/[name]-[hash][extname]';
+          }
+          return 'assets/[ext]/[name]-[hash][extname]';
+        }
       }
     },
     cssCodeSplit: true,
     chunkSizeWarningLimit: 1000,
-    reportCompressedSize: false
+    reportCompressedSize: false,
+    emptyOutDir: true,
+    modulePreload: {
+      polyfill: false
+    }
   },
   plugins: [
     react(),
@@ -73,5 +79,14 @@ export default defineConfig(({ mode }) => ({
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'framer-motion'],
     exclude: ['lovable-tagger']
+  },
+  // Add esbuild optimizations
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+    drop: ['console', 'debugger'],
+    treeShaking: true,
+    minifyIdentifiers: true,
+    minifySyntax: true,
+    minifyWhitespace: true
   }
 }));
