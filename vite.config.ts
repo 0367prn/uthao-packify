@@ -71,13 +71,7 @@ export default defineConfig(({ mode }) => ({
     }
   },
   plugins: [
-    react({
-      // Enable React Fast Refresh optimizations
-      jsxImportSource: '@emotion/react',
-      plugins: [
-        ['@swc/plugin-emotion', {}]
-      ]
-    }),
+    react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
