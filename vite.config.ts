@@ -83,7 +83,7 @@ export default defineConfig(({ mode }) => ({
   // Add esbuild optimizations
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
-    drop: ['console', 'debugger'],
+    drop: mode === 'production' ? ['console', 'debugger'] : [],
     treeShaking: true,
     minifyIdentifiers: true,
     minifySyntax: true,
