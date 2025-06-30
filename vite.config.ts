@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => ({
     headers: {
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'SAMEORIGIN',
-      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+      'Cache-Control': 'public, max-age=31536000'
     },
     historyApiFallback: true
   },
@@ -23,7 +24,8 @@ export default defineConfig(({ mode }) => ({
     headers: {
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'SAMEORIGIN',
-      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+      'Cache-Control': 'public, max-age=31536000'
     },
     historyApiFallback: true
   },
@@ -43,6 +45,7 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('@radix-ui')) return 'vendor-radix';
             if (id.includes('framer-motion')) return 'vendor-framer';
             if (id.includes('lucide-react')) return 'vendor-lucide';
+            if (id.includes('@tanstack/react-query')) return 'vendor-query';
             return 'vendor'; // other dependencies
           }
         },
@@ -68,7 +71,13 @@ export default defineConfig(({ mode }) => ({
     }
   },
   plugins: [
-    react(),
+    react({
+      // Enable React Fast Refresh optimizations
+      jsxImportSource: '@emotion/react',
+      plugins: [
+        ['@swc/plugin-emotion', {}]
+      ]
+    }),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
@@ -77,7 +86,14 @@ export default defineConfig(({ mode }) => ({
     },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'framer-motion'],
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom', 
+      '@tanstack/react-query', 
+      'framer-motion',
+      'web-vitals'
+    ],
     exclude: ['lovable-tagger']
   },
   // Add esbuild optimizations
