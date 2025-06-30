@@ -9,65 +9,25 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
     port: 8080,
-    strictPort: true,
-    headers: {
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'SAMEORIGIN',
-      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
-      'Cache-Control': 'public, max-age=31536000'
-    },
-    historyApiFallback: true
+    strictPort: true
   },
   preview: {
     port: 8080,
-    strictPort: true,
-    headers: {
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'SAMEORIGIN',
-      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
-      'Cache-Control': 'public, max-age=31536000'
-    },
-    historyApiFallback: true
+    strictPort: true
   },
   build: {
     outDir: "dist",
-    assetsDir: "assets",
-    sourcemap: mode === 'development',
+    sourcemap: false,
     minify: "esbuild",
-    target: 'esnext',
-    cssMinify: true,
+    target: 'es2015',
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Create separate chunks for major dependencies
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'vendor-react';
-            if (id.includes('@radix-ui')) return 'vendor-radix';
-            if (id.includes('framer-motion')) return 'vendor-framer';
-            if (id.includes('lucide-react')) return 'vendor-lucide';
-            if (id.includes('@tanstack/react-query')) return 'vendor-query';
-            return 'vendor'; // other dependencies
-          }
-        },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: ({name}) => {
-          if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
-            return 'assets/images/[name]-[hash][extname]';
-          }
-          if (/\.css$/.test(name ?? '')) {
-            return 'assets/css/[name]-[hash][extname]';
-          }
-          return 'assets/[ext]/[name]-[hash][extname]';
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-button']
         }
       }
-    },
-    cssCodeSplit: true,
-    chunkSizeWarningLimit: 1000,
-    reportCompressedSize: false,
-    emptyOutDir: true,
-    modulePreload: {
-      polyfill: false
     }
   },
   plugins: [
@@ -80,23 +40,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
   optimizeDeps: {
-    include: [
-      'react', 
-      'react-dom', 
-      'react-router-dom', 
-      '@tanstack/react-query', 
-      'framer-motion',
-      'web-vitals'
-    ],
-    exclude: ['lovable-tagger']
-  },
-  // Add esbuild optimizations
-  esbuild: {
-    logOverride: { 'this-is-undefined-in-esm': 'silent' },
-    drop: mode === 'production' ? ['console', 'debugger'] : [],
-    treeShaking: true,
-    minifyIdentifiers: true,
-    minifySyntax: true,
-    minifyWhitespace: true
+    include: ['react', 'react-dom', 'react-router-dom']
   }
 }));

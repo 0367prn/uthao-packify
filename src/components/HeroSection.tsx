@@ -1,12 +1,9 @@
+
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { MapPin } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { lazy, Suspense } from "react";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
-  
   const scrollToQuote = (e: React.MouseEvent) => {
     e.preventDefault();
     const quoteSection = document.getElementById('quote');
@@ -35,7 +32,6 @@ const HeroSection = () => {
           loading="lazy"
           width={400}
           height={400}
-          decoding="async"
         />
       </div>
 
@@ -102,11 +98,9 @@ const HeroSection = () => {
             src="/lovable-uploads/58dfb9a3-a70c-410d-a1d7-afec9a3b1adb.png" 
             alt="Professional Movers with Couch" 
             className="w-full h-auto object-contain rounded-lg shadow-xl"
-            loading="lazy"
+            loading="eager"
             width={800}
             height={600}
-            decoding="async"
-            fetchPriority="high"
           />
         </motion.div>
       </div>
